@@ -38,7 +38,7 @@ npm install
 npm start
 ```
 
-`npm start` should open a browser window to <http://localhost:4200>
+`npm start` should open a browser window to <http://localhost:3000>
 
 By default react runs on port 3000. To change this port you can run:
 
