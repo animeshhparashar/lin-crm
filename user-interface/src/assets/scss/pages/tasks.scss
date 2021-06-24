@@ -1,0 +1,263 @@
+@import '../variables';
+@import '../mixins';
+@import '../fonts';
+
+
+.tasks-wrapper {
+  display: grid;
+  grid-gap: $global-padding-margin;
+  padding: $global-padding-margin;
+  grid-template-columns: 3fr min-content;
+  grid-template-areas: "tasks-pane calendar-preview";
+  flex-grow: 1;
+  overflow: hidden;
+
+  .tasks-pane {
+    grid-area: tasks-pane;
+    display: flex;
+    flex-direction: column;
+
+    .titlebar {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      .titlebar-actions {
+        display: flex;
+        align-items: center;
+
+        .search-box {
+          margin: 0 12px;
+        }
+
+        .add-button {
+          height: 40px;
+          width: 40px;
+          background-color: $primary-color;
+          border-radius: 0.4rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .action-button {
+            fill: $base-white;
+            height: 24px;
+            width: 24px;
+          }
+        }
+
+        .add-button:hover {
+          box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+        }
+      }
+
+      .titlebar-text {
+        margin-left: 8px;
+        font-family: $primary-font;
+        font-weight: 800;
+        font-size: 48px;
+        color: $color-gray-1;
+      }
+
+
+
+    }
+
+  }
+
+  .calendar-preview {
+    grid-area: calendar-preview;
+    width: 240px;
+    background-color: $base-white;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    font-family: $primary-font;
+
+    .titlebar-actions {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      .titlebar-buttons {
+        width: 45%;
+        height: 48px;
+        padding: 8px 12px;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        border-radius: 12px;
+        align-items: center;
+
+        .action-button {
+          fill: $primary-color;
+          width: 22px;
+          height: 22px;
+        }
+
+        .action-button:hover {
+          fill: $secondary-color;
+        }
+      }
+    }
+
+    .plan-button {
+      background-color: $primary-color;
+      color: $base-white;
+      width: 100%;
+      border-radius: 0.4rem;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 20px;
+      margin: 12px 0;
+    }
+    .plan-button:hover {
+      box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    }
+
+    .hourly-tasks {
+      flex-grow: 1;
+      border: 2px solid $primary-color;
+      border-radius: 0.4rem;
+
+    }
+
+  }
+}
+
+.tasks {
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin: 0 24px 8px 8px;
+  text-align: center;
+  tbody {
+    tr {
+      border-radius: 0.4rem;
+    }
+    tr td:first-child {
+      border-top-left-radius: 0.4rem;
+      border-bottom-left-radius: 0.4rem;
+    }
+
+    tr td:last-child {
+      border-top-right-radius: 0.4rem;
+      border-bottom-right-radius: 0.4rem;
+    }
+  }
+
+
+
+  .task-list-header {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: 16px;
+    color: $color-gray-3;
+    margin-bottom: 2px;
+  }
+
+  .task {
+    margin: 6px 24px;
+    height: 42px;
+    cursor: pointer;
+
+    td {
+      height: 42px;
+      background-color: $base-white;
+      border-top: 1px solid $divider-color;
+      border-bottom: 1px solid $divider-color;
+    }
+
+    td:first-child {
+      border-left: 1px solid $divider-color;
+    }
+
+
+    td:last-child {
+      border-right: 1px solid $divider-color;
+    }
+
+    .task-header {
+      font-weight: 800;
+      color: rgba(79, 79, 79, 0.8);
+      font-size: 16px;
+      width: 180px;
+      font-family: $secondary-font;
+    }
+
+    .task-header.completed {
+      text-decoration: line-through;
+    }
+
+    .task-tag {
+      font-weight: 700;
+      color: $color-gray-3;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      font-family: $secondary-font;
+    }
+
+    .client-details {
+      font-weight: 700;
+      font-size: 12px;
+      font-family: $secondary-font;
+      color: $color-gray-3;
+      letter-spacing: 0.8px;
+    }
+
+    .deadline-details {
+      font-weight: 800;
+      font-size: 12px;
+      font-family: $secondary-font;
+      color: $color-gray-3;
+      letter-spacing: 0.8px;
+    }
+
+    .status {
+      border-left: 1px solid $divider-color;
+      width: 24px;
+      padding: 0 16px;
+
+      .status-complete-icon {
+        fill: $bg-success;
+      }
+
+      .status-ongoing-icon {
+        fill: $bg-pending;
+      }
+    }
+
+    .priority{
+      width: 4px;
+      padding: 4px 6px;
+
+      .priority-indicator {
+        width: 4px !important;
+        border-radius: 1rem;
+        margin-right: 8px;
+        height: 36px;
+      }
+
+      .priority-indicator.high {
+        background-color: $priority-indicator-urgent;
+      }
+
+      .priority-indicator.normal {
+        background-color: $priority-indicator-normal;
+      }
+
+      .priority-indicator.low {
+        background-color: $priority-indicator-low;
+      }
+    }
+  }
+}
+
+
+
+.task:hover {
+  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+}

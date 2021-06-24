@@ -1,0 +1,26 @@
+$tabs-label-selector: "~ .tabs > tab";
+$tabs-slider-selector: "~ .tab-slider";
+$tabs-content-selector: "~ .tabbed-content > .content";
+$tab-count: 2;
+
+@mixin tabs(
+  $tabs-label-selector: $tabs-label-selector,
+  $tabs-slider-selector: $tabs-slider-selector,
+  $tabs-content-selector: $tabs-content-selector) {
+
+  @for $i from 1 through $tab-count {
+    &:nth-of-type(#{$i}):checked {
+      #{$tabs-label-selector}:nth-child(#{$i}) {
+        @content;
+      }
+
+      #{$tabs-slider-selector} {
+        transform: translateX(#{100% * ($i - 1)});
+      }
+
+      #{$tabs-content-selector}:nth-child(#{$i}) {
+        display: block;
+      }
+    }
+  }
+}

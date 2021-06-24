@@ -1,0 +1,11 @@
+@import './variables';
+
+:export {
+  baseColor: $base-color;
+  primaryColor: $primary-color;
+  primaryColorInactive: $primary-color-inactive;
+  secondaryColor: $secondary-color;
+  baseWhite: $base-white;
+  primaryFont: $primary-font;
+}
+

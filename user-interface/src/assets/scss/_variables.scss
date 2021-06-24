@@ -1,0 +1,30 @@
+@import './fonts';
+$divider-color: rgba(229, 229, 229, 0.40);
+$color-gray-1: #333333;
+$color-gray-2: #4F4F4F;
+
+$color-gray-2-dimmed: rgba(79, 79, 79, 0.9);
+$color-gray-3: rgba(79, 79, 79, 0.8);
+$color-gray-4: rgba(79, 79, 79, 0.40);
+
+$base-color: #fafbff;
+$primary-color: #675BE8;
+$primary-color-inactive: rgba(103, 91, 232, 0.45);
+$secondary-color: #64CFF4;
+$base-white: #FFFFFF;
+$base-white-dimmed: rgba(252, 255, 255, 0.75);
+$priority-indicator-urgent: #EF2426;
+$priority-indicator-normal: #FF9F06;
+$priority-indicator-low: #1DB954;
+$bg-success: #1DB954;
+$bg-pending: $color-gray-3;
+$bg-failed: #EF2426;
+
+
+
+$global-padding-margin: 12px;
+
+$primary-font: 'Brandon Text';
+
+$secondary-font: 'Visby';
+

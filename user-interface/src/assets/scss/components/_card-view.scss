@@ -1,0 +1,98 @@
+@import '../variables';
+@import '../mixins';
+@import '../fonts';
+
+.card-view {
+  grid-gap: 12px;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  display: grid;
+
+  .card {
+    width: 242px;
+    height: 240px;
+    border: 1px solid $divider-color;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 14px 6px 14px;
+    box-sizing: border-box;
+    font-family: $primary-font;
+    border-radius: 0.4rem;
+
+    .card-header {
+      color: $color-gray-2;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: $secondary-font;
+    }
+
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px 0;
+      color: $color-gray-2;
+      font-family: $secondary-font;
+
+      .body-text {
+        margin-bottom: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        color: $color-gray-2-dimmed;
+      }
+
+      .tag {
+        display: flex;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        color: $color-gray-2-dimmed;
+        font-family: $secondary-font;
+
+        .tag-icon {
+          fill: $primary-color;
+          margin-right: 8px;
+        }
+      }
+
+    }
+
+    .card-footer {
+      display: flex;
+      font-family: $primary-font;
+      border-top: 1px solid $divider-color;
+      padding-top: 4px;
+      justify-content: flex-end;
+
+      .card-button {
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: $primary-font;
+        color: $secondary-color;
+        background-color: $base-white;
+        font-weight: 500;
+        box-shadow: none;
+        border-radius: 0.4rem;
+        padding: 2px 16px;
+        margin: 0 2px;
+        letter-spacing: 1px;
+        border: 1px solid $base-white;
+      }
+
+      .card-button:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    background-color: $base-white;
+    border-radius: 0.4rem;
+  }
+}

@@ -1,0 +1,40 @@
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+
+  .titlebar-text {
+    margin-left: 8px;
+    font-family: $primary-font;
+    font-weight: 800;
+    font-size: 48px;
+    color: $color-gray-1;
+  }
+
+  .titlebar-actions {
+    display: flex;
+    justify-content: space-between;
+
+    .titlebar-buttons {
+      background-color: $base-color;
+      width: 140px;
+      height: 48px;
+      padding: 8px 18px;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      border-radius: 12px;
+      align-items: center;
+
+      .action-button {
+        fill: $primary-color;
+        width: 22px;
+        height: 22px;
+        transition: filter 300ms;
+      }
+
+      .action-button:hover {
+        filter: brightness(1.5);
+      }
+    }
+  }
+}

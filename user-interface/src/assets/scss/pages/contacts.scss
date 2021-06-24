@@ -1,0 +1,19 @@
+@import '../variables';
+@import '../fonts';
+@import '../mixins';
+
+.contacts-wrapper {
+  background-color: $base-white;
+  border-radius: 16px;
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 4px solid $divider-color;
+
+  .titlebar-buttons {
+    width: 180px !important;
+    margin-left: 12px;
+  }
+}

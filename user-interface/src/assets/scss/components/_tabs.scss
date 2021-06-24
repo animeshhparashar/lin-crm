@@ -1,0 +1,29 @@
+.tab-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 4px solid $divider-color;
+
+  .tabs-wrapper {
+    position: relative;
+    align-self: end;
+    margin-bottom: -4px;
+  }
+
+}
+
+.tabbed-content {
+  padding: 0;
+}
+
+.tabbed-content.active {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 400px;
+}
+

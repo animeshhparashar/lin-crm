@@ -1,0 +1,118 @@
+@import '../variables';
+@import '../fonts';
+@import '../mixins';
+
+
+.calendar-wrapper {
+  background-color: $base-white;
+  border-radius: 16px;
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 4px solid $divider-color;
+
+  .fc-scroller {
+    overflow: hidden auto !important;
+  }
+
+  .fc-header-toolbar {
+    font-family: $primary-font;
+
+    .fc-toolbar-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: $primary-color;
+    }
+
+    .fc-prev-button, .fc-today-button, .fc-next-button {
+      background-color: $primary-color !important;
+      border-radius: 0.2rem;
+      border: none;
+      color: $base-white;
+      height: 32px;
+      padding: 0 4px;
+      margin: 0 2px !important;
+    }
+
+    .fc-today-button:disabled {
+      background-color: $primary-color-inactive !important;
+      opacity: 1;
+    }
+
+    .fc-today-button {
+      text-transform: capitalize;
+      padding: 0 24px;
+      background-color: $primary-color !important;
+    }
+
+    .fc-prev-button:focus, .fc-today-button:focus, .fc-next-button:focus {
+      box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2) !important;
+    }
+
+    .fc-button-group {
+      background-color: $primary-color;
+      border-radius: 0.2rem;
+      padding: 2px;
+      height: 36px;
+
+      button {
+        font-size: 12px;
+        border-radius: 0.2rem !important;
+        background-color: transparent;
+        color: $base-white;
+        border: none;
+        padding: 4px 24px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: capitalize !important;
+      }
+
+      button:focus {
+        box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2) !important;
+      }
+
+      button.fc-button-active {
+        background-color: $base-white;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .cal-view {
+    font-family: $primary-font;
+    color: $color-gray-3;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 0.2rem;
+
+    .fc-timegrid-slot {
+      height: 2.2em !important;
+    }
+
+    td, th, .fc-scrollgrid {
+      border: 1px solid $divider-color !important;
+    }
+
+    .fc-timegrid-slot-label {
+      background-color: #F7F7FD !important;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .fc-col-header {
+      background-color: #F7F7FD !important;
+      height: 52px;
+      font-weight: 600;
+
+      .fc-col-header-cell {
+        padding: 12px !important;
+      }
+    }
+  }
+
+  .cal-day {
+    font-family: $secondary-font;
+  }
+}

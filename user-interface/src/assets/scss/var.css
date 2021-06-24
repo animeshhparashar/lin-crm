@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Brandon Text";
+  src: url("../fonts/Brandon_Black.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Text";
+  src: url("../fonts/Brandon_Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Text";
+  src: url("../fonts/Brandon_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Text";
+  src: url("../fonts/Brandon_Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+:export {
+  baseColor: #F6F7FF;
+  primaryColor: #675BE8;
+  primaryColorInactive: rgba(103, 91, 232, 0.45);
+  secondaryColor: #64CFF4;
+  baseWhite: #FCFCFF;
+  primaryFont: "Brandon Text";
+}
+
+/*# sourceMappingURL=var.css.map */
