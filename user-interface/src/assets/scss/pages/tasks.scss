@@ -22,7 +22,7 @@
       justify-content: space-between;
       margin-top: 12px;
 
-      .titlebar-actions {
+      .title-toolbar {
         display: flex;
         align-items: center;
 
@@ -74,30 +74,18 @@
     flex-direction: column;
     padding: 12px;
     font-family: $primary-font;
+    position: relative;
 
-    .titlebar-actions {
+    .title-toolbar {
       display: flex;
       width: 100%;
       justify-content: flex-end;
-      .titlebar-buttons {
+      position: absolute;
+      right: 12px;
+
+      .titlebar-actions {
         width: 45%;
         height: 48px;
-        padding: 8px 12px;
-        display: flex;
-        box-sizing: border-box;
-        justify-content: space-between;
-        border-radius: 12px;
-        align-items: center;
-
-        .action-button {
-          fill: $primary-color;
-          width: 22px;
-          height: 22px;
-        }
-
-        .action-button:hover {
-          fill: $secondary-color;
-        }
       }
     }
 
@@ -113,7 +101,7 @@
       font-weight: 500;
       letter-spacing: 1px;
       font-size: 20px;
-      margin: 12px 0;
+      margin: 60px 0 12px;
     }
     .plan-button:hover {
       box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);

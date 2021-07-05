@@ -1,6 +1,10 @@
 .titlebar {
   display: flex;
   justify-content: space-between;
+  min-height: 72px;
+  max-height: 72px;
+  position: relative;
+  overflow-y: visible;
 
   .titlebar-text {
     margin-left: 8px;
@@ -10,26 +14,72 @@
     color: $color-gray-1;
   }
 
-  .titlebar-actions {
+  .title-toolbar {
     display: flex;
     justify-content: space-between;
+  }
+}
 
-    .titlebar-buttons {
-      background-color: $base-color;
-      width: 140px;
-      height: 48px;
-      padding: 8px 18px;
+.titlebar-actions {
+  background-color: $base-color;
+  min-width: 140px;
+  min-height: 48px;
+  max-height: 48px;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 12px;
+  flex-direction: column;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+
+  .action-header {
+    padding: 8px 18px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    min-height: 48px;
+
+    .close {
       display: flex;
       box-sizing: border-box;
-      justify-content: space-between;
-      border-radius: 12px;
+      height: 48px;
+
+
       align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all .4s ease-in-out;
+
+      .close-button {
+        transition: all .4s ease-in-out;
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+
+    .actions-wrapper {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+
+      .extra-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        width: 22px;
+        margin-left: 0;
+        transition: all 300ms ease-in-out;
+      }
 
       .action-button {
         fill: $primary-color;
         width: 22px;
         height: 22px;
-        transition: filter 300ms;
+        transition: all 300ms ease-in-out;
       }
 
       .action-button:hover {
@@ -37,4 +87,253 @@
       }
     }
   }
+
+  .dropdown-title {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+
+  .settings-header {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+
+  .action-dropdown {
+    display: none;
+  }
+}
+
+.titlebar-actions.open {
+  min-height: 196px;
+  max-height: 360px;
+  min-width: 320px;
+  transition: all .3s ease-in-out;
+  position: relative;
+
+  background-color: $base-white;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+
+  .action-header {
+    height: 72px;
+    padding-left: 8px;
+    min-height: 72px;
+  }
+
+  .action-header .close {
+    padding: 8px 2px 8px 0;
+    opacity: 1;
+    transition: all .4s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 42px;
+    width: 42px;
+    justify-content: flex-start;
+    align-items: baseline;
+
+
+    .close-background {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-width: 42px 42px 0 0;
+      border-color: $primary-color transparent transparent transparent;
+
+    }
+
+    .close-button {
+      width: 18px;
+      height: 18px;
+      opacity: 1;
+      margin-right: 0;
+      z-index: 12;
+      transition: all .4s ease-in-out;
+      fill: $base-white;
+    }
+
+    .close-button:hover {
+      filter: brightness(1.5);
+    }
+  }
+
+  .dropdown-title {
+    flex-grow: 1;
+    font-family: $primary-font;
+    font-weight: 600;
+    color: $color-gray-2;
+    opacity: 1;
+    margin-left: 8px;
+    font-size: 24px;
+    transition: opacity .2s ease-in-out;
+  }
+
+  .settings-header {
+    flex-grow: 1;
+    display: flex;
+    height: 60px;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+    text-decoration: none;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 8px 0 0;
+    margin-top: 8px;
+
+    .pic-wrapper {
+      height: 52px;
+      width: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .user-pic {
+        height: 48px;
+        width: 48px;
+        fill: $divider-color;
+      }
+    }
+
+    .profile-link {
+      display: flex;
+      flex-direction: column;
+      font-family: $primary-font;
+      margin-left: 4px;
+
+      .user-name {
+        font-weight: 700;
+        font-size: 24px;
+        color: $color-gray-1;
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+
+  .settings-header:hover {
+    background-color: $primary-color-hover;
+  }
+
+  .actions-wrapper {
+    flex-grow: 0;
+    width: 46px;
+    transition: width .2s ease-in-out;
+    justify-content: flex-end;
+
+    .extra-actions {
+      opacity: 0;
+      width: 0;
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  .action-dropdown {
+    display: flex;
+    padding: 4px 1rem 1rem;
+    flex-grow: 1;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    background-color: $base-white;
+    font-family: $primary-font;
+
+    .notification-item {
+      height: 40px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      color: $color-gray-3;
+      border-radius: 8px;
+      padding: 2px 12px;
+      transition: background-color 300ms;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .menu-item {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      transition: background-color 300ms;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: $color-gray-3;
+      font-family: $primary-font;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      font-size: 16px;
+
+      .menu-button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+        background-color: $divider-color;
+
+        .menu-icon {
+          height: 20px;
+          width: 20px;
+
+          fill: $color-gray-3;
+        }
+      }
+    }
+
+    .menu-item:hover, .notification-item:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+}
+
+.dropdown-title.hidden, .settings-header.hidden {
+  opacity: 0 !important;
+  transition: opacity .2s ease-in-out;
+}
+
+.menu {
+  width: 100%;
+}
+
+
+.menu-divider {
+  border: 1px solid $divider-color;
+  margin-top: 0;
+}
+
+.menu.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 400ms ease;
+}
+.menu.menu-primary-exit {
+  position: absolute;
+}
+.menu.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all 400ms ease;
+}
+
+.menu.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all 400ms ease;
+}
+.menu.menu-secondary-exit {
+
+}
+.menu.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all 400ms ease;
 }

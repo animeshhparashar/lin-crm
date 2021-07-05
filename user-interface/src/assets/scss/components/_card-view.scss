@@ -8,6 +8,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   display: grid;
+  overflow-y: scroll;
 
   .card {
     width: 242px;

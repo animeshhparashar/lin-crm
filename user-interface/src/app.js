@@ -1,7 +1,7 @@
 import React from "react";
 
 import Dashboard from './pages/dashboard';
-import Contact from './pages/contacts';
+import Contact from './pages/accounts';
 import Tasks from './pages/tasks';
 import Calendar from './pages/calendar';
 import Deals from './pages/deals';
@@ -9,6 +9,10 @@ import Login from './pages/login';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Sidebar from "./components/sidebar";
+import Clients from "./pages/clients";
+import Leads from "./pages/leads";
+import Accounts from "./pages/accounts";
+import Profile from "./pages/profile";
 
 
 class Navigation extends React.Component {
@@ -23,10 +27,15 @@ class Navigation extends React.Component {
                     <div className="wrapper">
                         <Sidebar />
                         <Route exact path="/" component={Dashboard}/>
-                        <Route exact path="/contacts" component={Contact}/>
                         <Route exact path="/tasks" component={Tasks}/>
                         <Route exact path="/deals" component={Deals}/>
                         <Route exact path="/calendar" component={Calendar}/>
+                        <Route exact path="/leads" component={Leads} />
+                        <Route exact path="/clients" component={Clients} />
+                        <Route exact path="/accounts" component={Accounts} />
+                        <Route path="/profile">
+                            <Profile />
+                        </Route>
                     </div>
                 </Router>
             );

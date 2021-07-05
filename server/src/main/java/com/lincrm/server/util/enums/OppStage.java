@@ -1,0 +1,13 @@
+package com.lincrm.server.util.enums;
+
+public enum OppStage {
+    PROSPECTING,
+    NEEDS_ANALYSIS,
+    VALUE_PROPOSITION,
+    IDENTIFYING_DECISION_MAKERS,
+    PERCEPTION_ANALYSIS,
+    PROPOSAL_OR_PRICE_QUOTE,
+    NEGOTIATION_OR_REVIEW,
+    CLOSED_WON,
+    CLOSED_LOST
+}

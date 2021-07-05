@@ -9,6 +9,7 @@ import javax.validation.constraints.Email;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -25,11 +26,13 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false, columnDefinition = "BINARY(16)")
     private UUID id;
 
     @Email
     private String email;
+
+    private Boolean status;
 
     private String password;
 
@@ -39,6 +42,10 @@ public class User implements Serializable {
 
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role"))
+    private List<Role> roles;
 
     @Version
     private Integer version;

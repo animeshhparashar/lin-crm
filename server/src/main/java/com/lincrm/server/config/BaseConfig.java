@@ -7,4 +7,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @Configuration
 public class BaseConfig implements WebMvcConfigurer {
+
+
 }

@@ -157,7 +157,6 @@ table.dataTable {
     font-size: 12px;
     border-top: 1px solid $divider-color;
     border-bottom: 1px solid $divider-color;
-
   }
   th {
     -webkit-box-sizing: content-box;
@@ -201,13 +200,14 @@ table.dataTable {
 }
 
 .table-footer {
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .dataTables_paginate {
   margin: 0;
   white-space: nowrap;
   text-align: right;
+
   ul.pagination {
     margin: 2px 0;
     white-space: nowrap;
@@ -221,11 +221,15 @@ table.dataTable {
     border-radius: 0.2rem;
     color: $primary-color;
     font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+
   }
 
   .paginate_button:hover {
     box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
     border: 2px solid $primary-color;
+
   }
 
   .paginate_button.disabled {
@@ -246,6 +250,7 @@ table.dataTable {
   .paginate_button.current {
     background-color: $primary-color;
     color: $base-white;
+    border: 2px solid $primary-color;
   }
 }
 

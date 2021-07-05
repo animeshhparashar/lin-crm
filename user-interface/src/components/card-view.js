@@ -1,7 +1,8 @@
 import React from "react";
-import '../assets/scss/components/_card-view.scss'
+import "../assets/scss/main.scss";
 
 import { FaTag } from "react-icons/all";
+import Scroller from "./scroller";
 
 class CardView extends React.Component {
     constructor(props) {
@@ -21,14 +22,12 @@ class CardView extends React.Component {
         "South Sea Plumbing Products - 1000 units",
         "T-Squared Techs - 1000 units"]
 
-    stat = [
-        "Needs Analysis",
+    stat = ["Needs Analysis",
         "Proposal/Price Quote",
         "Perception Analysis",
         "Value Proposition",
         "Closed Won",
-        "Prospecting"
-    ]
+        "Prospecting"]
 
     render() {
         return (
@@ -47,8 +46,7 @@ export const Card = (props) => {
             {props.header != null ?
                 <div className="card-header">
                     {props.header}
-                </div>
-                : null}
+                </div> : null}
             <div className="card-body">
                 <div className="body-text">
                     {props.children}

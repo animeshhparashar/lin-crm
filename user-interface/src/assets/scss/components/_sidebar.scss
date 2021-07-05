@@ -1,0 +1,429 @@
+
+.wrapper {
+  .sidebar.expanded {
+    grid-area: sidebar;
+    width: 200px;
+    padding: 8px 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .nav-item {
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-family: $primary-font;
+      font-weight: 600;
+      font-style: normal;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      text-decoration: none;
+      color: $primary-color-inactive;
+
+      .item-icon {
+        margin-right: 8px;
+        fill: $primary-color-inactive;
+        position: relative;
+        bottom: 1px;
+        font-size: 22px;
+      }
+
+      .item-link {
+        text-align: center;
+      }
+    }
+
+    .nav-item.collapsible {
+      height: auto;
+      max-height: 160px;
+      overflow: hidden;
+      transition: max-height .4s ease-in-out;
+      display: flex;
+
+      .collapsible-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: baseline;
+        width: 100%;
+
+        .item-heading {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          min-height: 40px;
+          cursor: default;
+
+          .control-icon {
+            font-size: 24px;
+          }
+
+          .heading-wrapper {
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .collapsible-items {
+          display: flex;
+          text-decoration: none;
+          text-align: left;
+          width: 100%;
+          padding: 0 12px;
+          margin-left: 10px;
+          border-left: 4px solid $divider-color;
+          opacity: 1;
+          transition: opacity 0.4s ease-in-out;
+          margin-bottom: 4px;
+
+          .items-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .item{
+              text-decoration: none;
+              color: $primary-color-inactive;
+              padding: 4px;
+            }
+
+            .item:hover {
+              filter: brightness(1.5);
+            }
+          }
+        }
+      }
+    }
+
+    .nav-item.collapsible.closed {
+      max-height: 40px;
+      overflow: hidden;
+      transition: max-height .4s ease-in-out;
+
+      .collapsible-items {
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+      }
+    }
+
+
+    .profile-data {
+      background-color: $primary-color;
+      border-radius: 18px;
+      height: 120px;
+      position: relative;
+      padding: 8px 6px;
+      .data-content {
+        display: flex;
+        justify-content: stretch;
+        font-family: $primary-font;
+
+        .profile-pic {
+          height: 36px;
+          width: 36px;
+          border-radius: 50%;
+          background-color: rgba(255,255,255, 0.5);
+          color: $base-white;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .profile-text {
+          color: $base-white;
+          font-weight: 500;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .nav-content {
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        margin-bottom: 12px;
+        font-family: $primary-font;
+        font-weight: 800;
+        font-size: 42px;
+
+        .sidebar-toggle {
+          margin-right: 18px;
+        }
+
+        .logo {
+          border-radius: 12px;
+          height: 48px;
+          width: 48px;
+          background-color: $base-white;
+          margin-right: 8px;
+          position: relative;
+          top: 4px;
+        }
+
+        .logo-text {
+          .logo-text-primary {
+            color: $primary-color;
+          }
+          .logo-text-secondary {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar.collapsed {
+    grid-area: sidebar;
+    width: 48px;
+    padding: 8px 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .nav-item {
+      border-radius: 8px;
+      text-decoration: none;
+      padding: 4px;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+      color: $primary-color-inactive;
+
+      .item-icon {
+        fill: $primary-color-inactive;
+        position: relative;
+        bottom: 1px;
+        font-size: 22px;
+      }
+
+      .item-link {
+        display: none;
+      }
+    }
+
+    .nav-item.collapsible {
+      .item-title, .control-icon {
+        display: none;
+      }
+    }
+
+    .nav-item.collapsible {
+      height: 40px;
+      overflow: visible;
+      display: flex;
+
+      .collapsible-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: baseline;
+        width: 100%;
+        position: relative;
+
+        .item-heading {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          min-height: 40px;
+          cursor: default;
+
+          .heading-wrapper {
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .collapsible-items {
+          display: flex;
+          text-decoration: none;
+          padding: 12px;
+          position: absolute;
+          top: -100%;
+          background: $base-white;
+          width: 142px;
+          height: 124px;
+          z-index: 10;
+          left: 58px;
+          border-radius: 8px;
+          font-family: $primary-font;
+          font-weight: 600;
+          font-style: normal;
+          font-size: 20px;
+          letter-spacing: 2px;
+          box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+
+          .items-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            border-left: 4px solid $divider-color;
+            padding-left: 8px;
+
+            .item{
+              text-decoration: none;
+              color: $primary-color-inactive;
+              padding: 4px;
+              height: 32px;
+
+              .item-link {
+                display: block;
+              }
+            }
+
+            .item:hover {
+              filter: brightness(1.5);
+            }
+          }
+        }
+
+        .collapsible-items.active {
+          background-color: $primary-color;
+        }
+      }
+    }
+
+    .nav-item.collapsible.closed {
+      max-height: 40px;
+      overflow: hidden;
+      transition: max-height .4s ease-in-out;
+
+      .collapsible-items {
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+      }
+    }
+
+    .profile-data {
+      background-color: $primary-color;
+      border-radius: 24px;
+      height: 120px;
+      position: relative;
+      padding: 8px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .data-content {
+        display: flex;
+        justify-content: stretch;
+        font-family: $primary-font;
+
+        .profile-pic {
+          height: 36px;
+          width: 36px;
+          border-radius: 50%;
+          background-color: rgba(255,255,255, 0.5);
+          color: $base-white;
+          font-weight: 900;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .profile-text {
+          display: none;
+        }
+      }
+
+      .profile-pic {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        background-color: rgba(255,255,255, 0.5);
+      }
+    }
+
+    .nav-content {
+      .logo-container {
+        display: flex;
+        height: 60px;
+        align-items: center;
+        margin-bottom: 12px;
+        font-family: $primary-font;
+        font-weight: 800;
+        font-size: 42px;
+        justify-content: center;
+        .logo {
+          border-radius: 12px;
+          height: 48px;
+          width: 48px;
+          background-color: $base-white;
+          position: relative;
+          top: 4px;
+        }
+
+        .logo-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.nav-item.active {
+  color: $base-white !important;
+  background-color: $primary-color !important;
+  .item-icon {
+    fill: $base-white !important;
+  }
+
+  .collapsible-items .item {
+    color: $base-white !important;
+  }
+}
+
+.nav-item.active::before {
+  content: '';
+  height: 52px;
+  width: 6px;
+  background-color: $primary-color;
+  position: absolute;
+  left: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.nav-item.active:hover {
+  color: $base-white !important;
+  background-color: $primary-color !important;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+  .item-icon {
+    fill: $base-white !important;
+  }
+
+
+  .collapsible-items .item {
+    color: $base-white !important;
+  }
+}
+
+.nav-item:hover {
+  color: $primary-color !important;
+  background-color: $base-white !important;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+  .item-icon {
+    fill: $primary-color !important;
+  }
+
+  .collapsible-items .item {
+    color: $primary-color !important;
+  }
+}
+
+.sidebar-toggle {
+  fill: $primary-color;
+  width: 24px;
+  height: 24px;
+}

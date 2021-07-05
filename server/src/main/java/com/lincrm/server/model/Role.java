@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -15,7 +16,6 @@ import java.util.UUID;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Table(name = "role")
 @Entity
 public class Role implements Serializable {
@@ -25,12 +25,16 @@ public class Role implements Serializable {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false, columnDefinition = "BINARY(16)")
     private UUID id;
 
     private String name;
 
     private String description;
+
+    @ManyToMany(mappedBy = "roles")
+    @ToString.Exclude
+    private List<User> users;
 
     @Override
     public boolean equals(Object o) {

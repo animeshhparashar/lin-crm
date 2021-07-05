@@ -6,8 +6,7 @@ import "../assets/scss/pages/calendar.scss";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import {TitleBar} from "../components/title-bar";
-import {FaBell, IoMdSettings} from "react-icons/all";
+import {TitleBar, TitleBarActions} from "../components/title-bar";
 import interactionPlugin from "@fullcalendar/interaction";
 import {ToolbarInput} from "@fullcalendar/common";
 
@@ -21,11 +20,10 @@ class Calendar extends React.Component {
     render() {
 
         return (
-            <div className="content-wrapper">
+            <div className="view-wrapper">
                 <div className="calendar-wrapper">
                     <TitleBar title="Calendar">
-                        <FaBell className="action-button"/>
-                        <IoMdSettings className="action-button"/>
+                        <TitleBarActions />
                     </TitleBar>
                     <FullCalendar
                         viewClassNames="cal-view"

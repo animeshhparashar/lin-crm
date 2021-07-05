@@ -10,12 +10,11 @@ class Tables extends React.Component {
         super(props);
         this.state = {
             data: null,
+            headerLength: 5,
         }
     }
 
     componentDidMount() {
-        //console.log(this.el);
-
         this.$el = $(this.el)
         this.$el.DataTable({
             pageLength:this.props.pageLength,
@@ -25,7 +24,32 @@ class Tables extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.searchTerm != null || this.props.searchTerm !== "") {
+        console.log(this.props.lexTerm);
+        if(this.props.lexTerm != null && this.props.lexTerm !== "") {
+            const table = this.$el.DataTable();
+            let lexSearch = "";
+            if(this.props.lexTerm === '#') {
+                for (let i = 0; i < 9; i++) {
+                    lexSearch+=("^" + i + "|");
+                }
+                lexSearch+=("^" + 9);
+            }else{
+                lexSearch = "^" + this.props.lexTerm;
+            }
+
+            if(this.props.searchTerm != null || this.props.searchTerm !== "") {
+                const cols = Array.from(Array(this.state.headerLength).keys());
+                cols.shift();
+                table.columns(0)
+                    .search(lexSearch, true, true, true)
+                    .column(cols)
+                    .search(this.props.searchTerm).draw();
+            }
+            else {
+                table.columns(0).search(lexSearch, true, true, true).draw();
+            }
+        }
+        else if (this.props.searchTerm != null || this.props.searchTerm !== "") {
             const table = this.$el.DataTable();
             table.search(this.props.searchTerm).draw();
         }

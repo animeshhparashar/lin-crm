@@ -1,10 +1,16 @@
 import React from "react";
-import "../assets/scss/main.css";
+import "../assets/scss/main.scss";
 
-import SidebarToggle from "../assets/icons/SidebarToggle";
 import {Link, withRouter} from 'react-router-dom';
 
-import {RiHome6Line, RiContactsBook2Line, RiFileListLine, CgCalendar, MdDonutLarge} from "react-icons/all";
+import {
+    RiHome6Line,
+    RiContactsBook2Line,
+    RiFileListLine,
+    CgCalendar,
+    MdDonutLarge,
+    MdKeyboardArrowRight, MdKeyboardArrowUp, GiHamburgerMenu
+} from "react-icons/all";
 
 class Sidebar extends React.Component {
 
@@ -34,32 +40,36 @@ class Sidebar extends React.Component {
             <div className={"sidebar " + (this.state.expanded ? "expanded" : "collapsed")}>
                 <div className="nav-content">
                     <div className="logo-container">
+                        <GiHamburgerMenu className="sidebar-toggle" onClick={this.toggleSidebar.bind(this)} />
                         <div className="logo-text">
                             <span className="logo-text-primary">Lin</span>
                             <span className="logo-text-secondary">CRM</span>
                         </div>
                     </div>
                     <div className="nav-links">
-                        <NavItem className={this.state.active === "dashboard" ? 'active' : ''} title="Dashboard" onClick={this.handleNavChange.bind(this)}
+                        <NavItem className={this.state.active === "dashboard" ? 'active' : ''} title="Dashboard"
+                                 onClick={this.handleNavChange.bind(this)}
                                  to="/" icon={<RiHome6Line className="item-icon"/>}/>
-                        <NavItem className={this.state.active === "contacts" ? 'active' : ''} title="Contacts" onClick={this.handleNavChange.bind(this)}
-                                 to="/contacts" icon={<RiContactsBook2Line className="item-icon"/>}/>
-                        <NavItem className={this.state.active === "tasks" ? 'active' : ''} title="Tasks" onClick={this.handleNavChange.bind(this)}
+
+                        <CollapsibleNavSection title="Customers"
+                                            className={["leads", "clients", "accounts"].includes(this.state.active) ? 'active' : ''}
+                                            icon={<RiContactsBook2Line className="item-icon"/>}>
+                            <CollapsibleItem title="Leads" to="/leads" onClick={this.handleNavChange.bind(this)}/>
+                            <CollapsibleItem title="Clients" to="/clients" onClick={this.handleNavChange.bind(this)}/>
+                            <CollapsibleItem title="Accounts" to="/accounts" onClick={this.handleNavChange.bind(this)}/>
+                        </CollapsibleNavSection>
+
+                        <NavItem className={this.state.active === "tasks" ? 'active' : ''} title="Tasks"
+                                 onClick={this.handleNavChange.bind(this)}
                                  to="/tasks" icon={<RiFileListLine className="item-icon"/>}/>
-                        <NavItem className={this.state.active === "deals" ? 'active' : ''} title="Deals" onClick={this.handleNavChange.bind(this)}
+
+                        <NavItem className={this.state.active === "deals" ? 'active' : ''} title="Deals"
+                                 onClick={this.handleNavChange.bind(this)}
                                  to="/deals" icon={<MdDonutLarge className="item-icon"/>}/>
-                        <NavItem className={this.state.active === "calendar" ? 'active' : ''} title="Calendar" onClick={this.handleNavChange.bind(this)}
+
+                        <NavItem className={this.state.active === "calendar" ? 'active' : ''} title="Calendar"
+                                 onClick={this.handleNavChange.bind(this)}
                                  to="/calendar" icon={<CgCalendar className="item-icon"/>}/>
-                    </div>
-                </div>
-                <div className="profile-data">
-                    <div className="data-content">
-                        <div className="profile-pic">D</div>
-                        <div className="profile-text">Dave Smith</div>
-                    </div>
-                    <div className="toggle-button">
-                        <SidebarToggle onClick={this.toggleSidebar.bind(this)}
-                                       className={this.state.expanded ? "expanded" : "collapsed"}/>
                     </div>
                 </div>
             </div>
@@ -67,6 +77,79 @@ class Sidebar extends React.Component {
 
     }
 }
+
+const CollapsibleItem = (props) => {
+    return (
+        <Link id={props.title}
+              to={props.to}
+              onClick={props.onClick}
+              className={"item"}>
+            <span className="item-link">{props.title}</span>
+        </Link>
+    );
+}
+
+class CollapsibleNavSection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+        }
+
+        this.wrapperRef = React.createRef();
+        // this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+            this.collapseDiv();
+        }
+    }
+
+    collapseDiv() {
+        this.setState({
+            open: false,
+        })
+    }
+
+    render() {
+
+        return (
+            <div
+                className={(this.state.open ? "nav-item collapsible " : "nav-item collapsible closed ") + this.props.className} ref={this.wrapperRef}>
+                <div className="collapsible-wrapper">
+                    <div className="item-heading" onClick={function () {
+                        this.setState(
+                            {open: !this.state.open})
+                    }.bind(this)}>
+                        <div className="heading-wrapper">
+                            {this.props.icon}
+                            <span className="item-title">{this.props.title}</span>
+                        </div>
+                        {!this.state.open ? <MdKeyboardArrowRight className="control-icon"/> :
+                            <MdKeyboardArrowUp className="control-icon"/>}
+                    </div>
+                    <div className={"collapsible-items " + this.props.className}>
+                        <div className="items-wrapper">
+                            {this.props.children}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
 
 const NavItem = props => {
     return (

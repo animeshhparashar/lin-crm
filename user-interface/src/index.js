@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/scss/main.css';
+import './assets/scss/main.scss';
 import configureStore from './store/configureStore';
 import {PersistGate} from 'redux-persist/es/integration/react';
 import {Provider} from 'react-redux';

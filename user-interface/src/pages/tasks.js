@@ -2,11 +2,15 @@ import React from "react";
 
 import "../assets/scss/main.scss";
 import '../assets/scss/pages/tasks.scss';
-import {FaBell, IoMdSettings, AiOutlinePlus, IoCheckmarkDoneCircle, MdDoneAll} from "react-icons/all";
+import {
+    AiOutlinePlus,
+    IoCheckmarkDoneCircle,
+    MdDoneAll,
+} from "react-icons/all";
 import SearchBar from "../components/searchbar";
 import {TabBar, TabView} from "../components/tab-view";
 import CollapsibleDiv from "../components/collapsible-div";
-import {TitleBarCondensed} from "../components/title-bar";
+import {TitleBarActions, TitleBarCondensed} from "../components/title-bar";
 
 class Tasks extends React.Component {
     constructor(props) {
@@ -25,7 +29,7 @@ class Tasks extends React.Component {
     render() {
 
         return (
-            <div className="content-wrapper">
+            <div className="view-wrapper">
                 <div className="tasks-wrapper">
                     <div className="tasks-pane">
                         <TitleBarCondensed title="Tasks">
@@ -81,11 +85,8 @@ class Tasks extends React.Component {
                         </TabView>
                     </div>
                     <div className="calendar-preview">
-                        <div className="titlebar-actions">
-                            <div className="titlebar-buttons">
-                                <FaBell className="action-button"/>
-                                <IoMdSettings className="action-button"/>
-                            </div>
+                        <div className="title-toolbar">
+                            <TitleBarActions />
                         </div>
                         <div className="plan-button">Week Plan</div>
                         <div className="hourly-tasks">

@@ -44,11 +44,9 @@ class Opportunities extends React.Component {
             }
 
             return (
-                <div className="opp-wrapper">
-                    <CardView>
-                        {cards}
-                    </CardView>
-                </div>
+                <CardView>
+                    {cards}
+                </CardView>
             );
         }
     }

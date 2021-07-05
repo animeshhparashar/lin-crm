@@ -2,7 +2,7 @@ import React from "react";
 import Tables from "../../components/tables";
 import CardView, {Card} from "../../components/card-view";
 
-class Leads extends React.Component {
+class AccountsContent extends React.Component {
     client = ["5D Investments",
         "JBC Banking Inc",
         "S Cane Sweeteners Ltd",
@@ -13,7 +13,7 @@ class Leads extends React.Component {
     render() {
         if(this.props.viewtype === "list") {
             return (
-                <Tables pageLength={5} searchTerm={this.props.searchTerm} />
+                <Tables pageLength={6} lexTerm={this.props.lexTerm} searchTerm={this.props.searchTerm} />
             );
         }
         else {
@@ -25,14 +25,12 @@ class Leads extends React.Component {
             }
 
             return (
-                <div>
-                    < CardView>
-                        {cards}
-                    </CardView>
-                </div>
+                < CardView>
+                    {cards}
+                </CardView>
             );
         }
     }
 }
 
-export default Leads;
+export default AccountsContent;
