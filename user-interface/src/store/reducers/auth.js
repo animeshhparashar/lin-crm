@@ -1,4 +1,6 @@
 const InitialState = {
+    username:"",
+    token:"",
     auth:true,
 }
 
@@ -8,7 +10,9 @@ const authReducer = (state = InitialState, action) => {
             console.log("Logging in");
             return{
                 ...state,
-                auth:true
+                auth:true,
+                username:action.username,
+                token:action.token    
             }
         case 'LOGOUT':
             console.log("Logged out");
