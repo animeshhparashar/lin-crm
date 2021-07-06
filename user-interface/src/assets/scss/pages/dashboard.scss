@@ -1,0 +1,134 @@
+@import '../variables';
+@import '../fonts';
+@import '../mixins';
+
+
+.dashboard-wrapper {
+  display: grid;
+  grid-gap: $global-padding-margin;
+  grid-template-columns: 3fr min-content;
+  grid-template-areas: "details-pane dashboard-overview";
+  flex-grow: 1;
+  overflow: hidden;
+
+  .details-pane {
+    grid-area: details-pane;
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    font-family: $primary-font;
+    overflow: hidden;
+
+    .titlebar-actions {
+      width: 140px !important;
+      margin-left: 12px;
+    }
+
+    .action-cards {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+
+      .card {
+        background-color: $base-white;
+        border-radius: 12px;
+        height: 92px;
+        flex-grow: 1;
+      }
+
+      .card:nth-child(2) {
+        margin: 0 16px;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+      }
+    }
+
+    .list-cards {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      flex-grow: 1;
+      margin: 16px 0 0;
+
+      .card {
+        background-color: $base-white;
+        border-radius: 12px;
+        flex-grow: 1;
+      }
+
+      .card:first-child {
+        margin-right: 16px;
+      }
+    }
+
+    .chart-overview-cards {
+      display: flex;
+      width: 100%;
+      align-items: stretch;
+
+      .chart-card {
+        flex-grow: 1;
+        height: 340px;
+        background-color: $base-white;
+        border-radius: 12px;
+        margin-right: 16px;
+      }
+
+      .overview-card {
+        width: 240px;
+        height: 340px;
+        background-color: $base-white;
+        border-radius: 12px;
+      }
+
+    }
+
+    .chart-card:hover, .overview-card:hover, .card:hover {
+      box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    }
+  }
+
+  .dashboard-overview {
+    grid-area: dashboard-overview;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+
+    .operational-details {
+      background-color: $base-white;
+      border-radius: 18px;
+      position: relative;
+      font-family: $primary-font;
+      justify-content: space-between;
+      align-items: center;
+      padding: 78px 16px 16px;
+      flex-grow: 1;
+      margin-bottom: 18px;
+
+      .title-toolbar {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        left: 16px;
+
+        .titlebar-actions {
+          width: 45%;
+          height: 48px;
+        }
+      }
+    }
+
+    .analytical-details {
+      background-color: $base-white;
+      border-radius: 18px;
+      height: 280px;
+    }
+
+  }
+}
+

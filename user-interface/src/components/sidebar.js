@@ -16,10 +16,18 @@ class Sidebar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            expanded: true,
-            active: !(this.props.location.pathname.replace("/", "") === "") ?
-                this.props.location.pathname.replace("/", "").toLowerCase() : "dashboard"
+        if(this.props.location.pathname.startsWith("/dashboard/")){
+            const loc = this.props.location.pathname.replace("/dashboard/", "").toLowerCase();
+            this.state = {
+                expanded: true,
+                active: loc,
+            }
+        }
+        else {
+            this.state = {
+                expanded: true,
+                active: this.props.location.pathname.replace("/", "").toLowerCase(),
+            }
         }
     }
 
@@ -47,9 +55,12 @@ class Sidebar extends React.Component {
                         </div>
                     </div>
                     <div className="nav-links">
-                        <NavItem className={this.state.active === "dashboard" ? 'active' : ''} title="Dashboard"
-                                 onClick={this.handleNavChange.bind(this)}
-                                 to="/" icon={<RiHome6Line className="item-icon"/>}/>
+                        <CollapsibleNavSection title="Dashboard"
+                                               className={["operational", "analytics"].includes(this.state.active) ? 'active' : ''}
+                                               icon={<RiHome6Line className="item-icon"/>}>
+                            <CollapsibleItem title="Operational" to="/dashboard/operational" onClick={this.handleNavChange.bind(this)}/>
+                            <CollapsibleItem title="Analytics" to="/dashboard/analytics" onClick={this.handleNavChange.bind(this)}/>
+                        </CollapsibleNavSection>
 
                         <CollapsibleNavSection title="Customers"
                                             className={["leads", "clients", "accounts"].includes(this.state.active) ? 'active' : ''}

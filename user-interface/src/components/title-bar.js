@@ -96,7 +96,9 @@ class TitleBarActions extends React.Component {
 
     render() {
         return (
-            <div className={"titlebar-actions" + (this.state.expanded ? " open" : "")} style={{ height: this.state.menuHeight }} ref={this.wrapperRef}>
+            <div className={"titlebar-actions " + (this.props.className) +
+            (this.state.expanded ? " open" : "")} style={{ height: this.state.menuHeight }}
+                 ref={this.wrapperRef}>
                 <div className="action-header">
 
                     {this.state.expanded ? <DropdownTitle activeAction = {this.state.activePane}/> : null}
@@ -117,10 +119,6 @@ class TitleBarActions extends React.Component {
 
     }
 }
-
-TitleBarActions.propTypes = {
-    children: PropTypes.element.isRequired,
-};
 
 class DropdownTitle extends React.Component {
     constructor(props) {
@@ -146,7 +144,7 @@ class DropdownTitle extends React.Component {
     render() {
         return (
             this.props.activeAction === Actions.Settings ?
-                <Link to="/profile/overview" className={"settings-header " + (this.state.hidden)}>
+                <Link to="/profile/preferences" className={"settings-header " + (this.state.hidden)}>
                     <div className="pic-wrapper">< FaUserCircle className="user-pic"/></div>
                     <div className="profile-link">
                         <div className="user-name">Dave Smith</div>
@@ -218,8 +216,7 @@ class ActionDropdown extends React.Component{
                     unmountOnExit>
                     <div className="menu settings">
                         <hr className="menu-divider" />
-                        <DropdownItem to="/profile/preferences" leftIcon={<IoMdSettings className="menu-icon" />}>Preferences</DropdownItem>
-                        <DropdownItem to="/profile/security" leftIcon={<IoMdSettings className="menu-icon" />}>Security</DropdownItem>
+                        <DropdownItem to="/profile/security" leftIcon={<IoMdSettings className="menu-icon" />}>Settings</DropdownItem>
                         <DropdownItem to="/logout" leftIcon={<IoMdExit className="menu-icon" />}>Logout</DropdownItem>
                     </div>
                 </CSSTransition>

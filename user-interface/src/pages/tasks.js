@@ -41,7 +41,7 @@ class Tasks extends React.Component {
                         <TabBar tabChangeNotifier={this.handleTabChange}
                                 length={2} tabs={["Today's Tasks", 'All Tasks']}/>
                         <TabView currentIndex={this.state.currentIndex} index={0}>
-                            <div>
+                            <div className="scroller">
                                 <CollapsibleDiv header={"Ongoing"}>
                                     <table className="tasks">
                                         <thead>
@@ -89,7 +89,7 @@ class Tasks extends React.Component {
                             <TitleBarActions />
                         </div>
                         <div className="plan-button">Week Plan</div>
-                        <div className="hourly-tasks">
+                        <div className="hourly-tasks scroller">
 
                         </div>
                     </div>

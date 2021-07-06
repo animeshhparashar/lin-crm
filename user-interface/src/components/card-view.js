@@ -31,7 +31,7 @@ class CardView extends React.Component {
 
     render() {
         return (
-            <div className="card-view">
+            <div className="card-view scroller">
                 {this.props.children}
             </div>
         );

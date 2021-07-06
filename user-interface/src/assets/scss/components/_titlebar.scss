@@ -103,6 +103,10 @@
   }
 }
 
+.titlebar-actions.light {
+  background-color: $base-white !important;
+}
+
 .titlebar-actions.open {
   min-height: 196px;
   max-height: 360px;
@@ -119,53 +123,13 @@
     min-height: 72px;
   }
 
-  .action-header .close {
-    padding: 8px 2px 8px 0;
-    opacity: 1;
-    transition: all .4s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 42px;
-    width: 42px;
-    justify-content: flex-start;
-    align-items: baseline;
-
-
-    .close-background {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-width: 42px 42px 0 0;
-      border-color: $primary-color transparent transparent transparent;
-
-    }
-
-    .close-button {
-      width: 18px;
-      height: 18px;
-      opacity: 1;
-      margin-right: 0;
-      z-index: 12;
-      transition: all .4s ease-in-out;
-      fill: $base-white;
-    }
-
-    .close-button:hover {
-      filter: brightness(1.5);
-    }
-  }
-
   .dropdown-title {
     flex-grow: 1;
     font-family: $primary-font;
-    font-weight: 600;
-    color: $color-gray-2;
+    font-weight: 700;
+    color: $primary-color;
     opacity: 1;
-    margin-left: 8px;
+    margin-left: 16px;
     font-size: 24px;
     transition: opacity .2s ease-in-out;
   }
@@ -203,10 +167,10 @@
       margin-left: 4px;
 
       .user-name {
-        font-weight: 700;
+        font-weight: 800;
         font-size: 24px;
-        color: $color-gray-1;
-        letter-spacing: 0.8px;
+        color: $primary-color;
+        letter-spacing: 1px;
       }
     }
   }
@@ -240,9 +204,9 @@
     font-family: $primary-font;
 
     .notification-item {
-      height: 40px;
+      height: 36px;
       font-weight: 500;
-      letter-spacing: 0.6px;
+      letter-spacing: 1px;
       color: $color-gray-3;
       border-radius: 8px;
       padding: 2px 12px;
@@ -250,7 +214,8 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 12px;
+      font-family: $secondary-font;
     }
 
     .menu-item {
@@ -262,10 +227,10 @@
       padding: 0.5rem;
       text-decoration: none;
       color: $color-gray-3;
-      font-family: $primary-font;
-      font-weight: 500;
-      letter-spacing: 0.6px;
-      font-size: 16px;
+      font-family: $secondary-font;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      font-size: 14px;
 
       .menu-button {
         height: 40px;
@@ -274,12 +239,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 8px;
+        margin-right: 12px;
         background-color: $divider-color;
+        margin-bottom: 6px;
 
         .menu-icon {
-          height: 20px;
-          width: 20px;
+          height: 18px;
+          width: 18px;
 
           fill: $color-gray-3;
         }

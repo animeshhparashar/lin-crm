@@ -20,6 +20,9 @@ import java.util.UUID;
 @Table(name = "user")
 @Entity
 public class User implements Serializable {
+    enum Gender {
+        Male, Female, Other
+    }
     @Serial
     private static final long serialVersionUID = 2923382244739514882L;
 
@@ -32,9 +35,18 @@ public class User implements Serializable {
     @Email
     private String email;
 
+    private String phoneNumber;
+
     private Boolean status;
 
     private String password;
+
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
+
+    private String jobTitle;
+
+    private String department;
 
     private String firstname;
 
@@ -44,8 +56,13 @@ public class User implements Serializable {
     private Date dateOfBirth;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role"))
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role"))
     private List<Role> roles;
+
+    @ManyToOne
+    @JoinColumn(name = "supervisor", referencedColumnName = "id")
+    private User supervisor;
 
     @Version
     private Integer version;

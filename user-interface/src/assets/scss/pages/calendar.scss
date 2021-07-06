@@ -1,7 +1,7 @@
 @import '../variables';
 @import '../fonts';
 @import '../mixins';
-
+@import '~@fontsource/montserrat/index.css';
 
 .calendar-wrapper {
   background-color: $base-white;
@@ -15,6 +15,22 @@
 
   .fc-scroller {
     overflow: hidden auto !important;
+  }
+
+  .fc-scroller::-webkit-scrollbar {
+    width: 8px;
+    padding: 2px;
+  }
+
+  .fc-scroller::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+  }
+
+  .fc-scroller::-webkit-scrollbar-thumb {
+    background-color: $divider-color;
+    border-radius: 20px;
+    border: 2px solid transparent;
   }
 
   .fc-header-toolbar {
@@ -96,13 +112,13 @@
     }
 
     .fc-timegrid-slot-label {
-      background-color: #F7F7FD !important;
+      background-color: $base-color !important;
       font-weight: 500;
       letter-spacing: 1px;
     }
 
     .fc-col-header {
-      background-color: #F7F7FD !important;
+      background-color: $base-color !important;
       height: 52px;
       font-weight: 600;
 

@@ -70,7 +70,7 @@ const TabView = (props) => {
     const {children, currentIndex, index, ...other } = props;
     return (
         <div role="tabpanel" hidden={currentIndex !== index} aria-labelledby={`tab-${index}`}
-             className={"tabbed-content " + (currentIndex === index ? "active": "")}>
+             className={"tabbed-content scroller " + (currentIndex === index ? "active": "")}>
             {props.children}
         </div>
     );

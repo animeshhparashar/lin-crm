@@ -8,6 +8,7 @@
 @import 'components/card-view';
 @import 'components/sidebar';
 @import 'components/scroller';
+@import 'components/forms';
 
 #root {
   padding: 0;
@@ -143,3 +144,20 @@ body {
   overflow: hidden;
   transition: max-height .5s ease;
 }
+
+.scroller::-webkit-scrollbar {
+  width: 8px;
+  padding: 2px;
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background-color: $divider-color;
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+

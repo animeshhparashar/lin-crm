@@ -38,7 +38,7 @@ class Calendar extends React.Component {
                         },
                         timeGridWeek: {
                             dayHeaderFormat: {
-                                weekday: 'long',
+                                weekday: 'short',
                                 day: 'numeric',
                             }
                         }
