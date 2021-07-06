@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 const TitleBar = (props) => {
     return (
-        <div className="titlebar">
+        <div className={"titlebar " + (props.className)}>
             <div className="titlebar-text">{props.title}</div>
             <div className="title-toolbar">
                 {props.search}
@@ -21,7 +21,7 @@ const TitleBar = (props) => {
 
 const TitleBarCondensed = (props) => {
     return(
-        <div className="titlebar">
+        <div className={"titlebar " + (props.className)}>
             <div className="titlebar-text">{props.title}</div>
             <div className="title-toolbar">
                 {props.children}
@@ -49,7 +49,6 @@ class TitleBarActions extends React.Component {
         this.closeDropdown = this.closeDropdown.bind(this);
 
         this.wrapperRef = React.createRef();
-        // this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 

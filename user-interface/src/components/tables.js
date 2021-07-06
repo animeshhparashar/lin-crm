@@ -17,8 +17,7 @@ class Tables extends React.Component {
     componentDidMount() {
         this.$el = $(this.el)
         this.$el.DataTable({
-            pageLength:this.props.pageLength,
-            dom: '<"table-header">t<"table-footer"p>',
+            dom: 't<"table-footer"p>',
 
         })
     }

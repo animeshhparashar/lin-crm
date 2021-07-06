@@ -201,12 +201,16 @@ table.dataTable {
 
 .table-footer {
   margin-top: 14px;
+  height: 52px;
 }
 
 .dataTables_paginate {
   margin: 0;
   white-space: nowrap;
   text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 
   ul.pagination {
     margin: 2px 0;

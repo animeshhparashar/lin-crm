@@ -7,10 +7,10 @@
   border-radius: 16px;
   padding: 16px;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
   border: 4px solid $divider-color;
-  max-height: calc(100vh - 70px);
+  display: grid;
+  grid-template-rows: 72px 1fr;
+  grid-gap: 0;
 
   .titlebar-actions {
     width: 180px !important;

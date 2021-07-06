@@ -2,10 +2,6 @@
 @import '../mixins';
 @import '../fonts';
 
-.opp-wrapper {
-  overflow-y: scroll;
-}
-
 .deals-wrapper {
   background-color: $base-white;
   border-radius: 16px;
@@ -14,7 +10,6 @@
   display: flex;
   flex-direction: column;
   border: 4px solid $divider-color;
-  max-height: calc(100vh - 136px);
 
   .titlebar-actions {
     margin-left: 12px;

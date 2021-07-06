@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/scss/main.scss";
-import '../assets/scss/pages/opportunities.scss'
+import '../assets/scss/pages/contacts.scss'
 
 import SearchBar from "../components/searchbar";
 import { IoIosListBox, AiFillAppstore} from "react-icons/all";
@@ -49,7 +49,7 @@ class Leads extends React.Component {
     render() {
         return (
             <div className="view-wrapper">
-                <div className="deals-wrapper">
+                <div className="contacts-wrapper">
                     <TitleBar title="Leads" search={<SearchBar searchValue={this.filterTable} />}>
                         <TitleBarActions actions = {
                             this.state.contentStyle === "card" ?
