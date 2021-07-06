@@ -12,7 +12,7 @@ public class NewAccountPayload {
     @NotBlank
     public String name;
 
-    public List<String> emails;
+    public String domain;
 
     @NotNull
     public AddressDTO billingAddress;

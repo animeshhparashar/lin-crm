@@ -30,8 +30,7 @@ public class Account implements Serializable {
 
     private String name;
 
-    @ElementCollection
-    private List<String> emails;
+    private String domain;
 
     @OneToOne
     private Address billingAddress;

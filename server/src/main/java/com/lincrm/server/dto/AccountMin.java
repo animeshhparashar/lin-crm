@@ -6,7 +6,7 @@ public class AccountMin {
 
     public String name;
 
-    public String email;
+    public String domain;
 
     public String assignedTo;
 }

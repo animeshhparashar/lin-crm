@@ -62,8 +62,7 @@ public class AccountsService {
         account = new Account();
 
         account.setName(payload.name);
-        account.setEmails(payload.emails);
-
+        account.setDomain(payload.domain);
         Address billingAddress = Address.fromDTO(payload.billingAddress);
         account.setBillingAddress(billingAddress);
 
@@ -102,7 +101,7 @@ public class AccountsService {
             AccountMin dto = new AccountMin();
             dto.id = account.getId().toString();
             dto.name = account.getName();
-            dto.email = account.getEmails().get(0);
+            dto.domain = account.getDomain();
             dto.assignedTo = account.getAssignedTo().getFullName();
 
             result.add(dto);

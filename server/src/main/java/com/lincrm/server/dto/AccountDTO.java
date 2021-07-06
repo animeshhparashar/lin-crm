@@ -8,7 +8,7 @@ public class AccountDTO {
 
     public String name;
 
-    public List<String> emails;
+    public String domain;
 
     public AddressDTO billingAddress;
 
