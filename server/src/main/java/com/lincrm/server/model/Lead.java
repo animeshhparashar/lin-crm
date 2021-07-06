@@ -67,6 +67,17 @@ public class Lead implements Serializable {
     @ManyToOne
     private User assignedTo;
 
+    @ManyToOne
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    private User createdBy;
+
+    @ManyToOne
+    @JoinColumn(name = "last_modified_by", referencedColumnName = "id")
+    private User lastModifiedBy;
+
+    private Date createdOn;
+
+    private Date lastModifiedOn;
 
     @Override
     public boolean equals(Object o) {

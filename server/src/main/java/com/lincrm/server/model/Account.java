@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -40,6 +41,18 @@ public class Account implements Serializable {
 
     @ManyToOne
     private User assignedTo;
+
+    @ManyToOne
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    private User createdBy;
+
+    @ManyToOne
+    @JoinColumn(name = "last_modified_by", referencedColumnName = "id")
+    private User lastModifiedBy;
+
+    private Date createdOn;
+
+    private Date lastModifiedOn;
 
     @Version
     private Integer version;

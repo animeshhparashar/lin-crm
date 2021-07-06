@@ -67,6 +67,10 @@ public class User implements Serializable {
     @Version
     private Integer version;
 
+    public String getFullName() {
+        return firstname + " " + lastname;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
