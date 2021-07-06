@@ -1,0 +1,202 @@
+name,domain,address,country,assignedTo,_row_
+IBM,www.ibm.com,"new york, new york, united states",USA,oderham0@lin.com,1
+US ARMY,www.goarmy.com,"alexandria, virginia, united states",USA,kvickress1@lin.com,2
+HEWLETT-PACKARD,www.hpe.com,"palo alto, california, united states",USA,jhrishchenko2@lin.com,3
+COGNIZANT TECHNOLOGY SOLUTIONS,www.cognizant.com,"teaneck, new jersey, united states",USA,tbeacock3@lin.com,4
+WALMART,www.walmartcareers.com,"withee, wisconsin, united states",USA,sstockell4@lin.com,5
+MICROSOFT,www.microsoft.com,"redmond, washington, united states",USA,jhackly5@lin.com,6
+AT&T,www.att.com,"dallas, texas, united states",USA,lnorgan6@lin.com,7
+UNITED STATES AIR FORCE,www.airforce.com,"randolph, texas, united states",USA,lcholwell7@lin.com,8
+PWC,www.pwc.com,"new york, new york, united states",USA,broyan8@lin.com,9
+WELLS FARGO,www.wellsfargo.com,"san francisco, california, united states",USA,lknaggs9@lin.com,10
+DELOITTE,www.deloitte.com,"new york, new york, united states",USA,abownasa@lin.com,11
+CITI,www.citigroup.com,"new york, new york, united states",USA,cboseleyb@lin.com,12
+BANK OF AMERICA,www.bankofamerica.com,"charlotte, north carolina, united states",USA,lrainforthc@lin.com,13
+JPMORGAN CHASE & CO.,www.jpmorganchase.com,"new york, new york, united states",USA,mommundsend@lin.com,14
+US NAVY,www.navy.com,"washington, district of columbia, united states",USA,lganforthe@lin.com,15
+AMAZON,www.amazon.com,"seattle, washington, united states",USA,kmedleyf@lin.com,16
+APPLE,www.apple.com,"cupertino, california, united states",USA,equickendeng@lin.com,17
+ORACLE,www.oracle.com,"redwood shores, california, united states",USA,hhubbleh@lin.com,18
+GOOGLE,www.google.com,"mountain view, california, united states",USA,iairdriei@lin.com,19
+UNITED STATES POSTAL SERVICE,www.usps.com,"washington, district of columbia, united states",USA,dghionj@lin.com,20
+MCDONALD'S CORPORATION,www.aboutmcdonalds.com,"oak brook, illinois, united states",USA,iepslyk@lin.com,21
+BOEING,www.boeing.com,"chicago, illinois, united states",USA,xcanbyl@lin.com,22
+KAISER PERMANENTE,www.kaiserpermanente.org,"oakland, california, united states",USA,sclotworthym@lin.com,23
+FORD MOTOR COMPANY,www.ford.com,"dearborn, michigan, united states",USA,bbassn@lin.com,24
+INTEL CORPORATION,www.intel.com,"santa clara, california, united states",USA,sdowtyo@lin.com,25
+DEPARTMENT OF VETERANS AFFAIRS,www.va.gov,"washington, district of columbia, united states",USA,oderham0@lin.com,26
+CISCO,www.cisco.com,"san jose, california, united states",USA,kvickress1@lin.com,27
+GENERAL MOTORS,www.gm.com,"detroit, michigan, united states",USA,jhrishchenko2@lin.com,28
+PEPSICO,www.pepsico.com,"purchase, new york, united states",USA,tbeacock3@lin.com,29
+TARGET,www.target.com,"minneapolis, minnesota, united states",USA,sstockell4@lin.com,30
+UPS,www.ups.com,"atlanta, georgia, united states",USA,jhackly5@lin.com,31
+PFIZER,www.pfizer.com,"new york, new york, united states",USA,lnorgan6@lin.com,32
+UNITEDHEALTH GROUP,www.unitedhealthgroup.com,"minneapolis, minnesota, united states",USA,lcholwell7@lin.com,33
+DELL,www.dell.com,"round rock, texas, united states",USA,broyan8@lin.com,34
+HONEYWELL,www.honeywell.com,"morristown, new jersey, united states",USA,lknaggs9@lin.com,35
+SCHLUMBERGER,www.slb.com,"houston, texas, united states",USA,abownasa@lin.com,36
+LOCKHEED MARTIN,www.lockheedmartin.com,"bethesda, maryland, united states",USA,cboseleyb@lin.com,37
+STARBUCKS,www.starbucks.com,"seattle, washington, united states",USA,lrainforthc@lin.com,38
+MORGAN STANLEY,www.morganstanley.com,"new york, new york, united states",USA,mommundsend@lin.com,39
+THE HOME DEPOT,www.homedepot.com,"atlanta, georgia, united states",USA,lganforthe@lin.com,40
+JOHNSON & JOHNSON,www.jnj.com,"new brunswick, new jersey, united states",USA,kmedleyf@lin.com,41
+SCHNEIDER ELECTRIC,www.schneider-electric.com,"erlanger, kentucky, united states",USA,equickendeng@lin.com,42
+STATE FARM,www.statefarm.com,"bloomington, illinois, united states",USA,hhubbleh@lin.com,43
+GE,www.ge.com,"fairfield, connecticut, united states",USA,iairdriei@lin.com,44
+PROCTER & GAMBLE,www.pg.com,"cincinnati, ohio, united states",USA,dghionj@lin.com,45
+WALGREENS,www.walgreens.com,"deerfield, illinois, united states",USA,iepslyk@lin.com,46
+"KELLER WILLIAMS REALTY, INC.",www.kw.com,"austin, texas, united states",USA,xcanbyl@lin.com,47
+"LOWE'S COMPANIES, INC.",www.lowes.com,"mooresville, north carolina, united states",USA,sclotworthym@lin.com,48
+UNITED STATES MARINE CORPS,www.marines.com,"washington, district of columbia, united states",USA,bbassn@lin.com,49
+DELL EMC,www.dellemc.com,"hopkinton, massachusetts, united states",USA,sdowtyo@lin.com,50
+VERIZON WIRELESS,www.verizonwireless.com,"basking ridge, new jersey, united states",USA,oderham0@lin.com,51
+J.P. MORGAN,www.jpmorgan.com,"new york, new york, united states",USA,kvickress1@lin.com,52
+VERIZON,www.verizon.com,"basking ridge, new jersey, united states",USA,jhrishchenko2@lin.com,53
+KPMG,www.kpmg.com,"montvale, new jersey, united states",USA,tbeacock3@lin.com,54
+LINKEDIN,www.linkedin.com,"mountain view, california, united states",USA,sstockell4@lin.com,55
+FACEBOOK,www.facebook.com,"menlo park, california, united states",USA,jhackly5@lin.com,56
+NORTHROP GRUMMAN CORPORATION,www.northropgrumman.com,"falls church, virginia, united states",USA,lnorgan6@lin.com,57
+ADP,www.adp.com,"roseland, new jersey, united states",USA,lcholwell7@lin.com,58
+MEDTRONIC,www.medtronic.com,"minneapolis, minnesota, united states",USA,broyan8@lin.com,59
+ABBOTT,www.abbott.com,"illinois city, illinois, united states",USA,lknaggs9@lin.com,60
+CHEVRON,www.chevron.com,"san ramon, california, united states",USA,abownasa@lin.com,61
+AMERICAN EXPRESS,www.americanexpress.com,"new york, new york, united states",USA,cboseleyb@lin.com,62
+SAMSUNG ELECTRONICS,www.samsung.com,"none, south carolina, united states",USA,lrainforthc@lin.com,63
+MACY'S,www.macysjobs.com,"cincinnati, ohio, united states",USA,mommundsend@lin.com,64
+THOMSON REUTERS,www.tr.com,"new york, new york, united states",USA,lganforthe@lin.com,65
+AVON,www.avoncompany.com,"new york, new york, united states",USA,kmedleyf@lin.com,66
+CVS HEALTH,www.cvshealth.com,"woonsocket, rhode island, united states",USA,equickendeng@lin.com,67
+HALLIBURTON,www.halliburton.com,"houston, texas, united states",USA,hhubbleh@lin.com,68
+CSC,www.csc.com,"falls church, virginia, united states",USA,iairdriei@lin.com,69
+MERCK,www.merck.com,"kenilworth, new jersey, united states",USA,dghionj@lin.com,70
+KPMG,www.beaconpartners.com,"new york, new york, united states",USA,iepslyk@lin.com,71
+DXC TECHNOLOGY,www.dxc.technology,,USA,xcanbyl@lin.com,72
+JOHNSON CONTROLS,www.johnsoncontrols.com,"milwaukee, wisconsin, united states",USA,sclotworthym@lin.com,73
+ALLSTATE,www.al.st,"northbrook, illinois, united states",USA,bbassn@lin.com,74
+MARRIOTT INTERNATIONAL,www.marriott.com,"bethesda, maryland, united states",USA,sdowtyo@lin.com,75
+3M HEALTH CARE,www.3m.com,"saint paul, minnesota, united states",USA,oderham0@lin.com,76
+XEROX,www.xerox.com,"norwalk, connecticut, united states",USA,kvickress1@lin.com,77
+CBRE,www.cbre.com,"los angeles, california, united states",USA,jhrishchenko2@lin.com,78
+NYC DEPARTMENT OF EDUCATION,www.nyc.gov,"new york, new york, united states",USA,tbeacock3@lin.com,79
+GOLDMAN SACHS,www.goldmansachs.com,"new york, new york, united states",USA,sstockell4@lin.com,80
+FIDELITY INVESTMENTS,www.fidelity.com,"boston, massachusetts, united states",USA,jhackly5@lin.com,81
+EXXONMOBIL,www.exxonmobil.com,"irving, texas, united states",USA,lnorgan6@lin.com,82
+T-MOBILE,www.tmobile.com,"bellevue, washington, united states",USA,lcholwell7@lin.com,83
+NIKE,www.nike.com,"beaverton, oregon, united states",USA,broyan8@lin.com,84
+BEST BUY,www.bestbuy.com,"richfield, minnesota, united states",USA,lknaggs9@lin.com,85
+AMERICAN AIRLINES,www.aa.com,"fort worth, texas, united states",USA,abownasa@lin.com,86
+BAKER HUGHES,www.bhge.com,"houston, texas, united states",USA,cboseleyb@lin.com,87
+THE COCA-COLA COMPANY,www.coca-colacompany.com,"atlanta, georgia, united states",USA,lrainforthc@lin.com,88
+GENPACT,www.genpact.com,"new york, new york, united states",USA,mommundsend@lin.com,89
+JLL,www.jll.com,"chicago, illinois, united states",USA,lganforthe@lin.com,90
+U.S. BANK,www.usbank.com,"minneapolis, minnesota, united states",USA,kmedleyf@lin.com,91
+PNC,www.pnc.com,"pittsburgh, pennsylvania, united states",USA,equickendeng@lin.com,92
+SPRINT,www.sprint.com,"overland park, kansas, united states",USA,hhubbleh@lin.com,93
+AIRBUS,www.airbusgroup.com,"arlington, virginia, united states",USA,iairdriei@lin.com,94
+CAPITAL ONE,www.capitalone.com,"mclean, virginia, united states",USA,dghionj@lin.com,95
+DELTA AIR LINES,www.delta.com,"atlanta, georgia, united states",USA,iepslyk@lin.com,96
+MERRILL LYNCH,www.ml.com,"new york, new york, united states",USA,xcanbyl@lin.com,97
+MONDELēZ INTERNATIONAL,www.mondelezinternational.com,"deerfield, illinois, united states",USA,sclotworthym@lin.com,98
+FARMERS INSURANCE,www.farmers.com,"los angeles, california, united states",USA,bbassn@lin.com,99
+AECOM,www.aecom.com,"los angeles, california, united states",USA,sdowtyo@lin.com,100
+UNITED STATES DEPARTMENT OF DEFENSE,www.defense.gov,"washington, district of columbia, united states",USA,oderham0@lin.com,101
+METLIFE,www.metlife.com,"new york, new york, united states",USA,kvickress1@lin.com,102
+TOTAL,www.total.com,"san diego, california, united states",USA,jhrishchenko2@lin.com,103
+CARGILL,www.cargill.com,"wayzata, minnesota, united states",USA,tbeacock3@lin.com,104
+UNITED AIRLINES,www.united.com,"chicago, illinois, united states",USA,sstockell4@lin.com,105
+MARY KAY INC.,www.marykay.com,"addison, texas, united states",USA,jhackly5@lin.com,106
+LIBERTY MUTUAL INSURANCE,www.libertymutualgroup.com,"boston, massachusetts, united states",USA,lnorgan6@lin.com,107
+COMCAST,www.comcast.com,"philadelphia, pennsylvania, united states",USA,lcholwell7@lin.com,108
+CATERPILLAR INC.,www.caterpillar.com,"peoria heights, illinois, united states",USA,broyan8@lin.com,109
+JACOBS,www.jacobs.com,"pasadena, california, united states",USA,lknaggs9@lin.com,110
+BNY MELLON,www.bnymellon.com,"new york, new york, united states",USA,abownasa@lin.com,111
+RAYTHEON,www.raytheon.com,"waltham, massachusetts, united states",USA,cboseleyb@lin.com,112
+ELI LILLY AND COMPANY,www.lilly.com,"indianapolis, indiana, united states",USA,lrainforthc@lin.com,113
+HP,www.hp.com,"palo alto, california, united states",USA,mommundsend@lin.com,114
+UBER,www.uber.com,"san francisco, california, united states",USA,lganforthe@lin.com,115
+KROGER,www.thekrogerco.com,"cincinnati, ohio, united states",USA,kmedleyf@lin.com,116
+THERMO FISHER SCIENTIFIC,www.thermofisher.com,"waltham, massachusetts, united states",USA,equickendeng@lin.com,117
+AIG,www.aig.com,"new york, new york, united states",USA,hhubbleh@lin.com,118
+NOVO NORDISK,www.novonordisk.com,"plainsboro, new jersey, united states",USA,iairdriei@lin.com,119
+H&R BLOCK,www.hrblock.com,"kansas city, missouri, united states",USA,dghionj@lin.com,120
+SOCIAL SECURITY ADMINISTRATION,www.socialsecurity.gov,"baltimore, maryland, united states",USA,iepslyk@lin.com,121
+COSTCO WHOLESALE,www.costco.com,"issaquah, washington, united states",USA,xcanbyl@lin.com,122
+THALES,www.thalesgroup.com,"alexandria, virginia, united states",USA,sclotworthym@lin.com,123
+CONVERGYS,www.convergys.com,"cincinnati, ohio, united states",USA,bbassn@lin.com,124
+IQVIA,www.iqvia.com,"danbury, connecticut, united states",USA,sdowtyo@lin.com,125
+SALESFORCE,www.salesforce.com,"san francisco, california, united states",USA,oderham0@lin.com,126
+THE DOW CHEMICAL COMPANY,www.dow.com,"midland, michigan, united states",USA,kvickress1@lin.com,127
+HILTON WORLDWIDE,www.stayhgi.com,"mclean, virginia, united states",USA,jhrishchenko2@lin.com,128
+LOS ANGELES UNIFIED SCHOOL DISTRICT,www.lausd.net,"los angeles, california, united states",USA,tbeacock3@lin.com,129
+ARMY NATIONAL GUARD,www.nationalguard.com,"arlington, virginia, united states",USA,sstockell4@lin.com,130
+NORDSTROM,www.nordstrom.com,"seattle, washington, united states",USA,jhackly5@lin.com,131
+LIFESPAN,www.lifespan.org,"providence, rhode island, united states",USA,lnorgan6@lin.com,132
+FEDEX,www.,"memphis, tennessee, united states",USA,lcholwell7@lin.com,133
+EDWARD JONES,www.edwardjones.com,"st. louis, missouri, united states",USA,broyan8@lin.com,134
+TRAVELERS,www.travelers.com,"new york, new york, united states",USA,lknaggs9@lin.com,135
+STATE STREET,www.statestreet.com,"boston, massachusetts, united states",USA,abownasa@lin.com,136
+THE WALT DISNEY COMPANY,www.disneycareers.com,"burbank, california, united states",USA,cboseleyb@lin.com,137
+NIELSEN,www.nielsen.com,"new york, new york, united states",USA,lrainforthc@lin.com,138
+HERBALIFE,www.herbalife.com,"los angeles, california, united states",USA,mommundsend@lin.com,139
+NORTHWESTERN MUTUAL,www.northwesternmutual.com,"milwaukee, wisconsin, united states",USA,lganforthe@lin.com,140
+EATON,www.eaton.com,"cleveland, ohio, united states",USA,kmedleyf@lin.com,141
+AFLAC,www.aflac.com,"columbus, georgia, united states",USA,equickendeng@lin.com,142
+UNITED NATIONS,www.un.org,"new york, new york, united states",USA,hhubbleh@lin.com,143
+MAYO CLINIC,www.mayoclinic.org,"rochester, minnesota, united states",USA,iairdriei@lin.com,144
+BOOZ ALLEN HAMILTON,www.boozallen.com,"mclean, virginia, united states",USA,dghionj@lin.com,145
+QUALCOMM,www.qualcomm.com,"san diego, california, united states",USA,iepslyk@lin.com,146
+JOHN DEERE,www.johndeere.com,"moline, illinois, united states",USA,xcanbyl@lin.com,147
+AETNA,www.aetna.com,"hartford, connecticut, united states",USA,sclotworthym@lin.com,148
+ENTERPRISE RENT-A-CAR,www.enterprise.com,"hillsborough, new hampshire, united states",USA,bbassn@lin.com,149
+BRISTOL-MYERS SQUIBB,www.bms.com,"new york, new york, united states",USA,sdowtyo@lin.com,150
+US DEPARTMENT OF HOMELAND SECURITY,www.dhs.gov,"washington, district of columbia, united states",USA,oderham0@lin.com,151
+NEW YORK LIFE INSURANCE COMPANY,www.newyorklife.com,"new york, new york, united states",USA,kvickress1@lin.com,152
+WEATHERFORD,www.weatherford.com,"houston, texas, united states",USA,jhrishchenko2@lin.com,153
+FLUOR CORPORATION,www.fluor.com,"irving, texas, united states",USA,tbeacock3@lin.com,154
+HCA,www.hcahealthcare.com,"nashville, tennessee, united states",USA,sstockell4@lin.com,155
+DUPONT,www.dupont.com,"wilmington, delaware, united states",USA,jhackly5@lin.com,156
+SEARS HOLDINGS CORPORATION,www.searsholdings.com,"hoffman estates, illinois, united states",USA,lnorgan6@lin.com,157
+CLEVELAND CLINIC,www.clevelandclinic.org,"cleveland, ohio, united states",USA,lcholwell7@lin.com,158
+KOHL'S DEPARTMENT STORES,www.kohls.com,"menomonee falls, wisconsin, united states",USA,broyan8@lin.com,159
+HUMANA,www.humana.com,"louisville, kentucky, united states",USA,lknaggs9@lin.com,160
+PRIMERICA,www.primerica.com,"duluth, georgia, united states",USA,abownasa@lin.com,161
+COLDWELL BANKER RESIDENTIAL BROKERAGE,www.coldwellbanker.com,"madison, new jersey, united states",USA,cboseleyb@lin.com,162
+FAA,www.faa.gov,"washington, district of columbia, united states",USA,lrainforthc@lin.com,163
+UNIVERSITY OF MICHIGAN,www.umich.edu,"ann arbor, michigan, united states",USA,mommundsend@lin.com,164
+FIS,www.fisglobal.com,"jacksonville, florida, united states",USA,lganforthe@lin.com,165
+GE POWER,www.gepower.com,"schenectady, new york, united states",USA,kmedleyf@lin.com,166
+EPAM SYSTEMS,www.epam.com,"newtown, pennsylvania, united states",USA,equickendeng@lin.com,167
+JCPENNEY,www.jcpenney.com,"plano, texas, united states",USA,hhubbleh@lin.com,168
+BOSTON SCIENTIFIC,www.bostonscientific.com,"marlborough, massachusetts, united states",USA,iairdriei@lin.com,169
+LENOVO,www.lenovo.com,"morrisville, north carolina, united states",USA,dghionj@lin.com,170
+AMAZON WEB SERVICES,www.,"seattle, washington, united states",USA,iepslyk@lin.com,171
+PHILIP MORRIS INTERNATIONAL,www.pmi.com,"new york, new york, united states",USA,xcanbyl@lin.com,172
+ALSTOM,www.alstom.com,"washington, pennsylvania, united states",USA,sclotworthym@lin.com,173
+CUMMINS INC.,www.cummins.com,"columbus, indiana, united states",USA,bbassn@lin.com,174
+CENTURYLINK,www.centurylink.com,"monroe, louisiana, united states",USA,sdowtyo@lin.com,175
+AMGEN,www.amgen.com,"thousand oaks, california, united states",USA,oderham0@lin.com,176
+CVS PHARMACY,www.,"woonsocket, rhode island, united states",USA,kvickress1@lin.com,177
+NCR CORPORATION,www.ncr.com,"duluth, georgia, united states",USA,jhrishchenko2@lin.com,178
+AMDOCS,www.amdocs.com,"chesterfield, missouri, united states",USA,tbeacock3@lin.com,179
+ABBVIE,www.abbvie.com,"north chicago, illinois, united states",USA,sstockell4@lin.com,180
+ARCELORMITTAL,www.arcelormittal.com,"none, south carolina, united states",USA,jhackly5@lin.com,181
+ARAMARK,www.aramark.com,"philadelphia, pennsylvania, united states",USA,lnorgan6@lin.com,182
+SAMSUNG,www.,"new york, new york, united states",USA,lcholwell7@lin.com,183
+CERNER CORPORATION,www.cerner.com,"kansas city, missouri, united states",USA,broyan8@lin.com,184
+KIMBERLY-CLARK,www.careersatkc.com,"seminole, texas, united states",USA,lknaggs9@lin.com,185
+AGILENT TECHNOLOGIES,www.agilent.com,"santa clara, california, united states",USA,abownasa@lin.com,186
+UPWORK,www.upwork.com,"mountain view, california, united states",USA,cboseleyb@lin.com,187
+WHOLE FOODS MARKET,www.wholefoodsmarket.com,"austin, texas, united states",USA,lrainforthc@lin.com,188
+COMCAST CABLE,www.,"philadelphia, pennsylvania, united states",USA,mommundsend@lin.com,189
+SOUTHWEST AIRLINES,www.southwest.com,"dallas, texas, united states",USA,lganforthe@lin.com,190
+STRYKER,www.stryker.com,"kalamazoo, michigan, united states",USA,kmedleyf@lin.com,191
+INTERNATIONAL MISSION OF MERCY (IMM),www.immusa.org,"morristown, new jersey, united states",USA,equickendeng@lin.com,192
+BANK OF AMERICA MERRILL LYNCH,www.bofaml.com,"charlotte, north carolina, united states",USA,hhubbleh@lin.com,193
+PUBLIX SUPER MARKETS,www.publix.com,"lakeland, florida, united states",USA,iairdriei@lin.com,194
+YOUTUBE,www.youtube.com,"san bruno, california, united states",USA,dghionj@lin.com,195
+U.S. DEPARTMENT OF STATE,www.state.gov,"washington, district of columbia, united states",USA,iepslyk@lin.com,196
+MARS,www.mars.com,"mclean, virginia, united states",USA,xcanbyl@lin.com,197
+USAA,www.usaa.com,"san antonio, texas, united states",USA,sclotworthym@lin.com,198
+CHICAGO PUBLIC SCHOOLS,www.cps.edu,"chicago, illinois, united states",USA,bbassn@lin.com,199
+FRESENIUS MEDICAL CARE,www.fmcna.com,"waltham, massachusetts, united states",USA,sdowtyo@lin.com,200
+CUSHMAN & WAKEFIELD,www.cushmanwakefield.com,"chicago, illinois, united states",USA,oderham0@lin.com,201
