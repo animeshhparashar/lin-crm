@@ -33,9 +33,13 @@ export const resetPassword = (username,password) => {
 }
 
 
-export const AccountList = (authheader,success) => {
+export const AccountList = (success) => {
 
-    axios.get(`${url}/api/accounts/list`)
+    axios.get(`${url}/api/accounts/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -44,9 +48,13 @@ export const AccountList = (authheader,success) => {
         })
 }
 
-export const AccountData = (authheader,id,success) => {
+export const AccountData = (id,success) => {
 
-    axios.get(`${url}/api/accounts/:${id}`)
+    axios.get(`${url}/api/accounts/:${id}`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -55,8 +63,11 @@ export const AccountData = (authheader,id,success) => {
         })
 }
 
-export const createAccount = (authheader,payload,success) => {
+export const createAccount = (payload,success) => {
     axios.post(`${url}/api/accounts/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -68,9 +79,13 @@ export const createAccount = (authheader,payload,success) => {
 }
 
 
-export const clientList = (authheader,success) => {
+export const clientList = (success) => {
 
-    axios.get(`${url}/api/clients/list`)
+    axios.get(`${url}/api/clients/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -79,9 +94,13 @@ export const clientList = (authheader,success) => {
         })
 }
 
-export const clientData = (authheader,id,success) => {
+export const clientData = (id,success) => {
 
-    axios.get(`${url}/api/clients/:${id}`)
+    axios.get(`${url}/api/clients/:${id}`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -90,8 +109,11 @@ export const clientData = (authheader,id,success) => {
         })
 }
 
-export const createClient = (authheader,payload,success) => {
+export const createClient = (payload,success) => {
     axios.post(`${url}/api/clients/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -103,9 +125,13 @@ export const createClient = (authheader,payload,success) => {
 }
 
 
-export const leadsList = (authheader,success) => {
+export const leadsList = (success) => {
 
-    axios.get(`${url}/api/leads/list`)
+    axios.get(`${url}/api/leads/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -114,9 +140,13 @@ export const leadsList = (authheader,success) => {
         })
 }
 
-export const leadData = (authheader,id,success) => {
+export const leadData = (id,success) => {
 
-    axios.get(`${url}/api/leads/:${id}`)
+    axios.get(`${url}/api/leads/:${id}`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -126,8 +156,11 @@ export const leadData = (authheader,id,success) => {
 }
 
 
-export const createLead = (authheader,payload,success) => {
+export const createLead = (payload,success) => {
     axios.post(`${url}/api/leads/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -139,8 +172,12 @@ export const createLead = (authheader,payload,success) => {
 }
 
 
-export const dealsList = (authheader,success) => {
-    axios.get(`${url}/api/deals/list`)
+export const dealsList = (success) => {
+    axios.get(`${url}/api/deals/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -150,9 +187,13 @@ export const dealsList = (authheader,success) => {
 }
 
 
-export const dealData = (authheader,id,success) => {
+export const dealData = (id,success) => {
 
-    axios.get(`${url}/api/leads/:${id}`)
+    axios.get(`${url}/api/leads/:${id}`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -163,8 +204,11 @@ export const dealData = (authheader,id,success) => {
 
 
 
-export const createDeal = (authheader,payload,success) => {
+export const createDeal = (payload,success) => {
     axios.post(`${url}/api/leads/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -175,8 +219,11 @@ export const createDeal = (authheader,payload,success) => {
     })
 }
 
-export const updateDeal = (authheader,payload,success) => {
+export const updateDeal = (payload,success) => {
     axios.post(`${url}/api/leads/update`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -190,7 +237,11 @@ export const updateDeal = (authheader,payload,success) => {
 
 export const listTasks = (success) => {
         
-    axios.get(`${url}/api/tasks/list`)
+    axios.get(`${url}/api/tasks/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
     .then((response)=>{
         success(response); // ongoing:[]   completed:[]
     })
@@ -201,8 +252,11 @@ export const listTasks = (success) => {
 }
 
 
-export const createTasks = (authheader,payload,success) => {
+export const createTasks = (payload,success) => {
     axios.post(`${url}/api/tasks/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
@@ -213,8 +267,11 @@ export const createTasks = (authheader,payload,success) => {
     })
 }
 
-export const updateTaskStatus = (authheader,id,status,success) => {
+export const updateTaskStatus = (id,status,success) => {
     axios.post(`${url}/api/leads/update`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         id:id,
         status:status
     })
@@ -228,7 +285,11 @@ export const updateTaskStatus = (authheader,id,status,success) => {
 
 
 export const listUsers = (success) => {
-    axios.get(`${url}/api/users/list`)
+    axios.get(`${url}/api/users/list`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
     .then((response)=>{
         success(response); 
     })
@@ -238,9 +299,13 @@ export const listUsers = (success) => {
 }
 
 
-export const userData = (authheader,id,success) => {
+export const userData = (id,success) => {
 
-    axios.get(`${url}/api/users/:${id}`)
+    axios.get(`${url}/api/users/:${id}`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } 
+    })
         .then((response)=>{
             success(response);
         })
@@ -250,8 +315,11 @@ export const userData = (authheader,id,success) => {
 }
 
 
-export const createUser = (authheader,payload,success) => {
+export const createUser = (payload,success) => {
     axios.post(`${url}/api/users/new`,{
+        headers:{
+            'Authorization': `Bearer ${token}`
+        } ,
         payload:payload
     })
     .then((response)=>{
