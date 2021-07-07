@@ -64,6 +64,18 @@ public class User implements Serializable {
     @JoinColumn(name = "supervisor", referencedColumnName = "id")
     private User supervisor;
 
+    @ManyToOne
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    private User createdBy;
+
+    @ManyToOne
+    @JoinColumn(name = "last_modified_by", referencedColumnName = "id")
+    private User lastModifiedBy;
+
+    private Date createdOn;
+
+    private Date lastModifiedOn;
+
     @Version
     private Integer version;
 

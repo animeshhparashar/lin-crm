@@ -5,12 +5,14 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+@Service
 public class TokenService {
     private final String SECRET_KEY = "6Z0LqmtoG7CobUkr5zbTNJvMsoQNJWhHINfagFnQhjMWt8Gn61EowrGNpMOMRNsz";
     private final long EXPIRATION_TIME = 1000 * 60 * 60 * 24; // Expiration time: 24hrs

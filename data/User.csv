@@ -1,26 +1,26 @@
-first_name,last_name,username,gender,date_of_birth,phone,email,job_title,department,status,_row_
-Orelle,Derham,oderham0,Female,1998-07-20 22:56:10,8565473335,oderham0@lin.com,Senior Developer,Business Development,true,1
-Kellsie,Vickress,kvickress1,Male,1976-08-24 22:42:32,1914302142,kvickress1@lin.com,Marketing Manager,Marketing,true,2
-Jephthah,Hrishchenko,jhrishchenko2,Female,1976-06-25 02:14:05,2227595873,jhrishchenko2@lin.com,Actuary,Legal,false,3
-Theo,Beacock,tbeacock3,Male,1978-01-30 21:15:05,4825049033,tbeacock3@lin.com,Sales Associate,Training,true,4
-Susan,Stockell,sstockell4,Female,1972-08-03 02:35:39,8778487952,sstockell4@lin.com,Structural Analysis Engineer,Sales,false,5
-Jacquenetta,Hackly,jhackly5,Female,1997-03-02 07:33:04,5864143646,jhackly5@lin.com,Quality Engineer,Training,false,6
-Lenee,Norgan,lnorgan6,Male,1981-06-01 13:10:16,9227698648,lnorgan6@lin.com,Budget/Accounting Analyst IV,Accounting,false,7
-Luce,Cholwell,lcholwell7,Female,1993-10-14 13:17:24,2172321624,lcholwell7@lin.com,Junior Executive,Research and Development,false,8
-Brandea,Royan,broyan8,Male,1971-11-27 23:09:17,4568670901,broyan8@lin.com,Web Designer II,Business Development,false,9
-Leona,Knaggs,lknaggs9,Female,1972-01-13 13:29:48,4833140686,lknaggs9@lin.com,Nurse Practicioner,Training,false,10
-Arly,Bownas,abownasa,Male,1997-01-21 15:32:19,3343068162,abownasa@lin.com,Technical Writer,Marketing,true,11
-Constantine,Boseley,cboseleyb,Male,1981-12-01 10:03:27,2744962992,cboseleyb@lin.com,Software Test Engineer IV,Support,true,12
-Lloyd,Rainforth,lrainforthc,Male,1975-10-29 22:37:00,6688057163,lrainforthc@lin.com,Assistant Professor,Product Management,true,13
-Marwin,Ommundsen,mommundsend,Female,1998-07-23 22:34:32,2235560472,mommundsend@lin.com,Statistician III,Training,false,14
-Link,Ganforth,lganforthe,Female,1983-10-03 16:46:20,7877889806,lganforthe@lin.com,Automation Specialist IV,Research and Development,false,15
-Kassandra,Medley,kmedleyf,Female,1969-03-28 04:22:13,8899130469,kmedleyf@lin.com,Data Coordiator,Services,false,16
-Ella,Quickenden,equickendeng,Male,1962-11-15 14:21:07,5233192929,equickendeng@lin.com,Civil Engineer,Product Management,true,17
-Hanny,Hubble,hhubbleh,Female,1964-02-29 00:00:38,4124184931,hhubbleh@lin.com,Associate Professor,Legal,true,18
-Irwinn,Airdrie,iairdriei,Female,1993-01-14 12:36:38,1208518636,iairdriei@lin.com,Clinical Specialist,Accounting,false,19
-Daniel,Ghion,dghionj,Male,1983-05-14 04:07:54,4222264725,dghionj@lin.com,Dental Hygienist,Training,false,20
-Isabelle,Epsly,iepslyk,Female,1999-04-07 09:17:45,9188321440,iepslyk@lin.com,Senior Financial Analyst,Support,false,21
-Xever,Canby,xcanbyl,Male,1986-01-09 15:28:58,1366662861,xcanbyl@lin.com,Analyst Programmer,Sales,true,22
-Shaina,Clotworthy,sclotworthym,Female,1998-07-10 21:39:57,4267229710,sclotworthym@lin.com,Editor,Accounting,false,23
-Brena,Bass,bbassn,Female,1990-05-13 06:06:37,7152448285,bbassn@lin.com,Nurse Practicioner,Engineering,true,24
-Somerset,Dowty,sdowtyo,Female,1999-03-25 17:49:09,3778190711,sdowtyo@lin.com,Developer I,Sales,false,25
+first_name,last_name,gender,date_of_birth,phone,email,job_title,department,status
+Orelle,Derham,Female,20-07-1998 22:56,8565473335,oderham0@lin.com,Senior Developer,Business Development,TRUE
+Kellsie,Vickress,Male,24-08-1976 22:42,1914302142,kvickress1@lin.com,Marketing Manager,Marketing,TRUE
+Jephthah,Hrishchenko,Female,25-06-1976 02:14,2227595873,jhrishchenko2@lin.com,Actuary,Legal,FALSE
+Theo,Beacock,Male,30-01-1978 21:15,4825049033,tbeacock3@lin.com,Sales Associate,Training,TRUE
+Susan,Stockell,Female,03-08-1972 02:35,8778487952,sstockell4@lin.com,Structural Analysis Engineer,Sales,FALSE
+Jacquenetta,Hackly,Female,02-03-1997 07:33,5864143646,jhackly5@lin.com,Quality Engineer,Training,FALSE
+Lenee,Norgan,Male,01-06-1981 13:10,9227698648,lnorgan6@lin.com,Budget/Accounting Analyst IV,Accounting,FALSE
+Luce,Cholwell,Female,14-10-1993 13:17,2172321624,lcholwell7@lin.com,Junior Executive,Research and Development,FALSE
+Brandea,Royan,Male,27-11-1971 23:09,4568670901,broyan8@lin.com,Web Designer II,Business Development,FALSE
+Leona,Knaggs,Female,13-01-1972 13:29,4833140686,lknaggs9@lin.com,Nurse Practicioner,Training,FALSE
+Arly,Bownas,Male,21-01-1997 15:32,3343068162,abownasa@lin.com,Technical Writer,Marketing,TRUE
+Constantine,Boseley,Male,01-12-1981 10:03,2744962992,cboseleyb@lin.com,Software Test Engineer IV,Support,TRUE
+Lloyd,Rainforth,Male,29-10-1975 22:37,6688057163,lrainforthc@lin.com,Assistant Professor,Product Management,TRUE
+Marwin,Ommundsen,Female,23-07-1998 22:34,2235560472,mommundsend@lin.com,Statistician III,Training,FALSE
+Link,Ganforth,Female,03-10-1983 16:46,7877889806,lganforthe@lin.com,Automation Specialist IV,Research and Development,FALSE
+Kassandra,Medley,Female,28-03-1969 04:22,8899130469,kmedleyf@lin.com,Data Coordiator,Services,FALSE
+Ella,Quickenden,Male,15-11-1962 14:21,5233192929,equickendeng@lin.com,Civil Engineer,Product Management,TRUE
+Hanny,Hubble,Female,29-02-1964 00:00,4124184931,hhubbleh@lin.com,Associate Professor,Legal,TRUE
+Irwinn,Airdrie,Female,14-01-1993 12:36,1208518636,iairdriei@lin.com,Clinical Specialist,Accounting,FALSE
+Daniel,Ghion,Male,14-05-1983 04:07,4222264725,dghionj@lin.com,Dental Hygienist,Training,FALSE
+Isabelle,Epsly,Female,07-04-1999 09:17,9188321440,iepslyk@lin.com,Senior Financial Analyst,Support,FALSE
+Xever,Canby,Male,09-01-1986 15:28,1366662861,xcanbyl@lin.com,Analyst Programmer,Sales,TRUE
+Shaina,Clotworthy,Female,10-07-1998 21:39,4267229710,sclotworthym@lin.com,Editor,Accounting,FALSE
+Brena,Bass,Female,13-05-1990 06:06,7152448285,bbassn@lin.com,Nurse Practicioner,Engineering,TRUE
+Somerset,Dowty,Female,25-03-1999 17:49,3778190711,sdowtyo@lin.com,Developer I,Sales,FALSE

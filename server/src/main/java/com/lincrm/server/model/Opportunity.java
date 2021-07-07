@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -23,7 +24,6 @@ public class Opportunity implements Serializable {
         EXISTING_BUSINESS,
         NEW_BUSINESS
     }
-
 
     @Serial
     private static final long serialVersionUID = 1430100217686174605L;
@@ -55,6 +55,22 @@ public class Opportunity implements Serializable {
 
     @ManyToOne
     private User assignedTo;
+
+    @OneToOne
+    @JoinColumn(name = "lead_id", referencedColumnName = "id")
+    private Lead lead;
+
+    @ManyToOne
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    private User createdBy;
+
+    @ManyToOne
+    @JoinColumn(name = "last_modified_by", referencedColumnName = "id")
+    private User lastModifiedBy;
+
+    private Date createdOn;
+
+    private Date lastModifiedOn;
 
     @Version
     private Integer version;

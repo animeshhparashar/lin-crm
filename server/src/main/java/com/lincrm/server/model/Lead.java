@@ -15,7 +15,7 @@ import java.util.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "lead")
+@Table(name = "leads")
 @Entity
 public class Lead implements Serializable {
     @Serial
