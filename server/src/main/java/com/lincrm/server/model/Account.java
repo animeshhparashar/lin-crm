@@ -33,9 +33,11 @@ public class Account implements Serializable {
     private String domain;
 
     @OneToOne
+    @JoinColumn(name = "billing_address", referencedColumnName = "id")
     private Address billingAddress;
 
     @OneToOne
+    @JoinColumn(name = "shipping_address", referencedColumnName = "id")
     private Address shippingAddress;
 
     @ManyToOne

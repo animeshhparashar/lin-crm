@@ -47,9 +47,17 @@ class Accounts extends React.Component {
         }
     }
 
+    clear = () => {
+        if(this.state.lexTerm !== "") {
+            this.setState({
+                lexTerm: "",
+            });
+        }
+    }
+
     render() {
         return (
-            <div className="view-wrapper">
+            <div className="view-wrapper contacts">
                 <div className="contacts-wrapper">
                     <TitleBar title="Accounts" search={<SearchBar searchValue={this.filterTable} />}>
                         <TitleBarActions actions = {
@@ -63,7 +71,7 @@ class Accounts extends React.Component {
                         searchTerm={this.state.contentStyle ==="list" ? this.state.searchTerm : ""}
                         viewtype={this.state.contentStyle} />
                 </div>
-                <BottomBar onDataFilter={this.alphabeticFilter} />
+                <BottomBar clear={this.clear} onDataFilter={this.alphabeticFilter} />
             </div>
         );
 

@@ -3,6 +3,10 @@
 @import '../mixins';
 @import '~@fontsource/montserrat/index.css';
 
+.view-wrapper.calendar {
+  grid-template-rows: calc(100vh - (2 * #{$global-padding-margin}));
+}
+
 .calendar-wrapper {
   background-color: $base-white;
   border-radius: 16px;

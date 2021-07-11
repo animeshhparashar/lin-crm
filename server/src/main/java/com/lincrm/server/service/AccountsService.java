@@ -11,16 +11,18 @@ import com.lincrm.server.model.Account;
 import com.lincrm.server.model.Address;
 import com.lincrm.server.model.User;
 import com.lincrm.server.repository.AccountRepository;
+import com.lincrm.server.repository.AddressRepository;
+import com.lincrm.server.util.WorkBookService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class AccountsService {
@@ -28,6 +30,8 @@ public class AccountsService {
     DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy HH:mm");
     @Autowired
     AccountRepository accountRepository;
+    @Autowired
+    AddressRepository addressRepository;
 
     @Autowired
     ModelMapper modelMapper;
@@ -35,6 +39,8 @@ public class AccountsService {
     TrailService trailService;
     @Autowired
     UserService userService;
+    @Autowired
+    WorkBookService workBookService;
 
     public AccountDTO fetchAccountDTO(Account account) {
         AccountDTO dto = modelMapper.map(account, AccountDTO.class);
@@ -49,6 +55,46 @@ public class AccountsService {
         dto.createdOn = dateFormat.format(account.getCreatedOn());
 
         return dto;
+    }
+
+    public void createAccountsFromXLSX(MultipartFile file, User admin) throws IOException, ParseException {
+        List<Map<String, String>> data = workBookService.parseXLSXFile(file);
+        Date currentDate = new Date();
+        DateFormat df = new SimpleDateFormat("");
+        System.out.println("Creating Account Records...");
+        System.out.println("Found " + data.size() + " records in XLSX File");
+
+        int counter = 1;
+        for(Map<String, String> record : data) {
+            Account account = new Account();
+            User assignedTo = userService.fetchUser(record.get("assignedTo"));
+
+            account.setName(record.get("name"));
+            account.setDomain(record.get("domain"));
+
+            Address address = new Address();
+            address.setLineA(record.get("line_a"));
+            address.setLineB(record.get("line_b"));
+            address.setCity(record.get("city"));
+            address.setState(record.get("state"));
+            address.setCountry(record.get("country"));
+            address.setPostalCode(((Long) Long.parseLong(record.get("postal_code"))).toString());
+
+            address = addressRepository.save(address);
+
+            account.setBillingAddress(address);
+            account.setShippingAddress(address);
+            account.setAssignedTo(assignedTo);
+
+            account.setCreatedBy(admin);
+            account.setCreatedOn(currentDate);
+
+            accountRepository.save(account);
+
+            System.out.print("\r" + counter + "/" + data.size() + " records created...");
+            counter++;
+        }
+        System.out.println("\nRecords Creation Complete...");
     }
 
 

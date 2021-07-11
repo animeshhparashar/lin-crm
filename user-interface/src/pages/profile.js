@@ -28,7 +28,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div className="view-wrapper">
+            <div className="view-wrapper profile">
                 <div className="profile-wrapper">
                     <div className="details-wrapper">
                         <div className="content-links">

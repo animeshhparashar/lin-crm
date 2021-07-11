@@ -1,6 +1,7 @@
 import React from "react";
 
 import '../assets/scss/main.scss';
+import {MdAdjust, MdBlurOn} from "react-icons/all";
 
 class BottomBar extends React.Component {
 
@@ -17,8 +18,17 @@ class BottomBar extends React.Component {
         else document.getElementById(value).classList.add("active");
     }
 
+    clearLexTerm = () => {
+        this.props.clear();
+    }
+
     render() {
         const filterButtons = [];
+        filterButtons.push(
+            <div className="filter-button" id="clear" onClick={() => this.clearLexTerm()}>
+                <MdAdjust className="clear-icon" />
+            </div>
+        );
         filterButtons.push(
             <div className="filter-button" id={"num"} onClick={() =>
                 this.onFilterChange('#')}>{'#'}</div>

@@ -2,6 +2,10 @@
 @import '../fonts';
 @import '../mixins';
 
+.view-wrapper.contacts {
+  grid-template-rows: calc(100vh - (3 * #{$global-padding-margin} + 46px)) 46px;
+}
+
 .contacts-wrapper {
   background-color: $base-white;
   border-radius: 16px;
@@ -11,6 +15,7 @@
   display: grid;
   grid-template-rows: 72px 1fr;
   grid-gap: 0;
+  height: calc(100vh - (4 * #{$global-padding-margin} + 78px));
 
   .titlebar-actions {
     width: 180px !important;

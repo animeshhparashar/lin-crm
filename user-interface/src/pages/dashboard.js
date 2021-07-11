@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <div className="view-wrapper">
+            <div className="view-wrapper dashboard">
                 <Switch>
                     <Route path="/dashboard/operational" component={Operational} />
                     <Route path="/dashboard/analytics" component={Analytical} />

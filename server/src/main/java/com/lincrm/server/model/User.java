@@ -20,8 +20,8 @@ import java.util.UUID;
 @Table(name = "user")
 @Entity
 public class User implements Serializable {
-    enum Gender {
-        Male, Female, Other
+    public enum Gender {
+        MALE, FEMALE
     }
     @Serial
     private static final long serialVersionUID = 2923382244739514882L;

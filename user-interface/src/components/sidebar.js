@@ -9,7 +9,7 @@ import {
     RiFileListLine,
     CgCalendar,
     MdDonutLarge,
-    MdKeyboardArrowRight, MdKeyboardArrowUp, GiHamburgerMenu
+    MdKeyboardArrowRight, MdKeyboardArrowUp, GiHamburgerMenu, MdFiberSmartRecord
 } from "react-icons/all";
 
 class Sidebar extends React.Component {
@@ -82,6 +82,11 @@ class Sidebar extends React.Component {
                                  onClick={this.handleNavChange.bind(this)}
                                  to="/calendar" icon={<CgCalendar className="item-icon"/>}/>
                     </div>
+                </div>
+
+                <div className="admin-swatch">
+                    <MdFiberSmartRecord className="swatch-icon" />
+                    <Link className="swatch-link" to="/">Admin Panel</Link>
                 </div>
             </div>
         );

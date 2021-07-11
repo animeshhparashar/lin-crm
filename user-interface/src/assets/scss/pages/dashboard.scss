@@ -2,6 +2,9 @@
 @import '../fonts';
 @import '../mixins';
 
+.view-wrapper.dashboard {
+  grid-template-rows: calc(100vh - (2 * #{$global-padding-margin}));
+}
 
 .dashboard-wrapper {
   display: grid;

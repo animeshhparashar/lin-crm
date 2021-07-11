@@ -2,14 +2,21 @@
 @import '../mixins';
 @import '../fonts';
 
+.view-wrapper.deals {
+  grid-template-rows: calc(100vh - (3 * #{$global-padding-margin} + 46px)) 46px;
+}
+
 .deals-wrapper {
   background-color: $base-white;
   border-radius: 16px;
   padding: 16px;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
   border: 4px solid $divider-color;
+  height: calc(100vh - ((4 * #{$global-padding-margin}) + 78px));
+  display: grid;
+  grid-gap: 0;
+  grid-template-rows: 72px 1fr;
+  grid-auto-columns: 1fr;
 
   .titlebar-actions {
     margin-left: 12px;

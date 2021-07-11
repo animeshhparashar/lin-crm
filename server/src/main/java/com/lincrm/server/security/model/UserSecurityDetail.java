@@ -32,7 +32,6 @@ public class UserSecurityDetail  implements UserDetails {
 
         this.authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-
     }
 
     public String getFirstname() {

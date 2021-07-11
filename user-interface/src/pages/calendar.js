@@ -20,7 +20,7 @@ class Calendar extends React.Component {
     render() {
 
         return (
-            <div className="view-wrapper">
+            <div className="view-wrapper calendar">
                 <div className="calendar-wrapper">
                     <TitleBar title="Calendar">
                         <TitleBarActions />

@@ -26,11 +26,11 @@ body {
     padding: $global-padding-margin;
     grid-template-columns: min-content 5fr;
     grid-template-areas: "sidebar content";
+    grid-template-rows: calc(100vh - (2 * #{$global-padding-margin}));
 
     .view-wrapper {
       grid-area: content;
       display: grid;
-      grid-template-rows: 1fr auto;
       grid-gap: $global-padding-margin;
       height:calc(100vh - (2 * #{$global-padding-margin}));
 

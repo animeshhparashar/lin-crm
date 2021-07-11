@@ -29,7 +29,7 @@ class Tasks extends React.Component {
     render() {
 
         return (
-            <div className="view-wrapper">
+            <div className="view-wrapper tasks">
                 <div className="tasks-wrapper">
                     <div className="tasks-pane">
                         <TitleBarCondensed title="Tasks">
@@ -55,26 +55,20 @@ class Tasks extends React.Component {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <Task header={"High Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"high"} tag={"Dummy Tag"}/>
-                                        <Task header={"High Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"high"} tag={"Dummy Tag"}/>
-                                        <Task header={"Normal Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"normal"} tag={"Dummy Tag"}/>
-                                        <Task header={"Low Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"low"} tag={"Dummy Tag"}/>
-                                        <Task header={"Low Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"low"} tag={"Dummy Tag"}/>
+                                        <Task header={"Call Manager"} client={"AT&T"}
+                                              deadline={"15:00"} priority={"high"} tag={"NEGOTIATION OR REVIEW"}/>
+                                        <Task header={"Reconfirm new quote"} client={"Diego Kemsley"}
+                                              deadline={"19:00"} priority={"normal"} tag={"PROPOSAL OR PRICE QUOTE"}/>
+
                                         </tbody>
                                     </table>
                                 </CollapsibleDiv>
                                 <CollapsibleDiv header={"Completed"}>
                                     <table className="tasks">
                                         <tbody>
-                                        <Task completed={true} header={"Low Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"low"} tag={"Dummy Tag"}/>
-                                        <Task completed={true} header={"Low Priority Task"} client={"South Sea Plumbing Products"}
-                                              deadline={"17:00"} priority={"low"} tag={"Dummy Tag"}/>
+                                        <Task completed={true} header={"Notify Analysts"} client={"Star O'Dogherty"}
+                                              deadline={"11:00"} priority={"low"} tag={"NEEDS ANALYSIS"}/>
+
                                         </tbody>
                                     </table>
                                 </CollapsibleDiv>

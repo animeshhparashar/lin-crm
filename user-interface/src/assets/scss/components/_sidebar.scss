@@ -3,7 +3,7 @@
   .sidebar.expanded {
     grid-area: sidebar;
     width: 200px;
-    padding: 8px 8px 8px 0;
+    padding: 8px 8px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,38 +108,42 @@
       }
     }
 
-
-    .profile-data {
+    .admin-swatch {
       background-color: $primary-color;
-      border-radius: 18px;
-      height: 120px;
+      border-radius: 0.4rem;
+      height: 46px;
+      box-sizing: border-box;
       position: relative;
-      padding: 8px 6px;
-      .data-content {
-        display: flex;
-        justify-content: stretch;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: center;
+      .swatch-icon {
+        fill: $base-white-dimmed;
+        margin-right: 8px;
+        height: 18px;
+        width: 18px;
+        align-self: center;
+      }
+
+      .swatch-link {
+        text-decoration: none;
+        color: $base-white-dimmed;
+        font-size: 16px;
+        letter-spacing: 2px;
         font-family: $primary-font;
+        font-weight: 600;
+        font-style: normal;
+        align-self: center;
+      }
+    }
 
-        .profile-pic {
-          height: 36px;
-          width: 36px;
-          border-radius: 50%;
-          background-color: rgba(255,255,255, 0.5);
-          color: $base-white;
-          font-weight: 600;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+    .admin-swatch:hover {
+      .swatch-icon {
+        fill: $base-white;
+      }
 
-        .profile-text {
-          color: $base-white;
-          font-weight: 500;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin-left: 8px;
-        }
+      .swatch-link {
+        color: $base-white;
       }
     }
 
@@ -183,7 +187,7 @@
   .sidebar.collapsed {
     grid-area: sidebar;
     width: 48px;
-    padding: 8px 8px 8px 0;
+    padding: 8px 8px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -305,43 +309,31 @@
       }
     }
 
-    .profile-data {
+    .admin-swatch {
       background-color: $primary-color;
-      border-radius: 24px;
-      height: 120px;
+      border-radius: 0.4rem;
+      height: 46px;
+      box-sizing: border-box;
       position: relative;
-      padding: 8px 6px;
+      padding: 8px 8px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      .data-content {
-        display: flex;
-        justify-content: stretch;
-        font-family: $primary-font;
-
-        .profile-pic {
-          height: 36px;
-          width: 36px;
-          border-radius: 50%;
-          background-color: rgba(255,255,255, 0.5);
-          color: $base-white;
-          font-weight: 900;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .profile-text {
-          display: none;
-        }
+      justify-content: center;
+      align-items: center;
+      .swatch-icon {
+        fill: $base-white-dimmed;
+        height: 18px;
+        width: 18px;
+        align-self: center;
       }
 
-      .profile-pic {
-        height: 36px;
-        width: 36px;
-        border-radius: 50%;
-        background-color: rgba(255,255,255, 0.5);
+      .swatch-link {
+        display: none;
+      }
+    }
+
+    .admin-swatch:hover {
+      .swatch-icon {
+        fill: $base-white;
       }
     }
 
