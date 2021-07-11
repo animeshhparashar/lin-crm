@@ -1,0 +1,56 @@
+# dependencies
+/user-interface/node_modules
+/user-interface/.pnp
+/user-interface.pnp.js
+
+# testing
+/user-interface/coverage
+
+# production
+/user-interface/build
+
+# misc
+/user-interface/.DS_Store
+/user-interface/.env.local
+/user-interface/.env.development.local
+/user-interface/.env.test.local
+/user-interface/.env.production.local
+
+/user-interface/npm-debug.log*
+/user-interface/yarn-debug.log*
+/user-interface/yarn-error.log*
+
+/server/HELP.md
+/server/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/resources/application.properties
+
+### STS ###
+/server/.apt_generated
+/server/.classpath
+/server/.factorypath
+/server/.project
+/server/.settings
+/server/.springBeans
+/server/.sts4-cache
+
+### IntelliJ IDEA ###
+/server/.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/server/nbproject/private/
+/server/nbbuild/
+/server/dist/
+/server/nbdist/
+/server/.nb-gradle/
+/server/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+/server/.vscode/
