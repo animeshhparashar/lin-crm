@@ -25,7 +25,7 @@
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-!**/src/main/resources/application.properties
+*.properties
 
 ### STS ###
 /server/.apt_generated
@@ -54,3 +54,6 @@
 
 ### VS Code ###
 /server/.vscode/
+*.properties
+*.properties
+*.properties
