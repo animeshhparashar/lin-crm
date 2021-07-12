@@ -1,11 +1,27 @@
 import * as Auth from '../store/actions/auth';
-const axios = require('axios');
-const url = "";
+import axios from 'axios';
+
+const apiUrl = "localhost:5000/api";
+
+const unauthorizedRequests = axios.create({
+    baseURL: apiUrl,
+    'Content-Type': 'application/json'
+});
+
+const authorizedRequests = axios.create({
+    baseURL: apiUrl,
+    headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+    }
+});
+
+
 
 
 export const login = (username,password,success) => {
 
-    axios.post(`${url}/auth/login`,{
+    unauthorizedRequests().post('/auth/login',{
         username:username,
         password:password
     })  .then((response)=>{
@@ -19,7 +35,7 @@ export const login = (username,password,success) => {
 
 export const resetPassword = (username,password) => {
 
-    axios.get(url+'/auth/login',{
+    axios.get(url+'/auth/reset-password',{
         username:username,
         password:password
     })
@@ -35,11 +51,7 @@ export const resetPassword = (username,password) => {
 
 export const AccountList = (success) => {
 
-    axios.get(`${url}/api/accounts/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/accounts/list')
         .then((response)=>{
             success(response);
         })
@@ -50,11 +62,7 @@ export const AccountList = (success) => {
 
 export const AccountData = (id,success) => {
 
-    axios.get(`${url}/api/accounts/:${id}`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get(`/accounts/:${id}`)
         .then((response)=>{
             success(response);
         })
@@ -64,10 +72,7 @@ export const AccountData = (id,success) => {
 }
 
 export const createAccount = (payload,success) => {
-    axios.post(`${url}/api/accounts/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/accounts/new',{
         payload:payload
     })
     .then((response)=>{
@@ -81,11 +86,7 @@ export const createAccount = (payload,success) => {
 
 export const clientList = (success) => {
 
-    axios.get(`${url}/api/clients/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/clients/list')
         .then((response)=>{
             success(response);
         })
@@ -96,11 +97,7 @@ export const clientList = (success) => {
 
 export const clientData = (id,success) => {
 
-    axios.get(`${url}/api/clients/:${id}`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get(`/clients/:${id}`)
         .then((response)=>{
             success(response);
         })
@@ -110,10 +107,7 @@ export const clientData = (id,success) => {
 }
 
 export const createClient = (payload,success) => {
-    axios.post(`${url}/api/clients/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/clients/new',{
         payload:payload
     })
     .then((response)=>{
@@ -127,11 +121,7 @@ export const createClient = (payload,success) => {
 
 export const leadsList = (success) => {
 
-    axios.get(`${url}/api/leads/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/leads/list')
         .then((response)=>{
             success(response);
         })
@@ -142,11 +132,7 @@ export const leadsList = (success) => {
 
 export const leadData = (id,success) => {
 
-    axios.get(`${url}/api/leads/:${id}`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get(`/leads/:${id}`,)
         .then((response)=>{
             success(response);
         })
@@ -157,10 +143,7 @@ export const leadData = (id,success) => {
 
 
 export const createLead = (payload,success) => {
-    axios.post(`${url}/api/leads/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/leads/new',{
         payload:payload
     })
     .then((response)=>{
@@ -173,11 +156,7 @@ export const createLead = (payload,success) => {
 
 
 export const dealsList = (success) => {
-    axios.get(`${url}/api/deals/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/deals/list',)
         .then((response)=>{
             success(response);
         })
@@ -189,11 +168,7 @@ export const dealsList = (success) => {
 
 export const dealData = (id,success) => {
 
-    axios.get(`${url}/api/leads/:${id}`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get(`/leads/:${id}`,)
         .then((response)=>{
             success(response);
         })
@@ -205,10 +180,7 @@ export const dealData = (id,success) => {
 
 
 export const createDeal = (payload,success) => {
-    axios.post(`${url}/api/leads/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/leads/new',{
         payload:payload
     })
     .then((response)=>{
@@ -220,10 +192,8 @@ export const createDeal = (payload,success) => {
 }
 
 export const updateDeal = (payload,success) => {
-    axios.post(`${url}/api/leads/update`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/leads/update',{
+
         payload:payload
     })
     .then((response)=>{
@@ -237,11 +207,7 @@ export const updateDeal = (payload,success) => {
 
 export const listTasks = (success) => {
         
-    axios.get(`${url}/api/tasks/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/tasks/list')
     .then((response)=>{
         success(response); // ongoing:[]   completed:[]
     })
@@ -253,10 +219,7 @@ export const listTasks = (success) => {
 
 
 export const createTasks = (payload,success) => {
-    axios.post(`${url}/api/tasks/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/tasks/new',{
         payload:payload
     })
     .then((response)=>{
@@ -268,10 +231,7 @@ export const createTasks = (payload,success) => {
 }
 
 export const updateTaskStatus = (id,status,success) => {
-    axios.post(`${url}/api/leads/update`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/leads/update',{
         id:id,
         status:status
     })
@@ -285,11 +245,7 @@ export const updateTaskStatus = (id,status,success) => {
 
 
 export const listUsers = (success) => {
-    axios.get(`${url}/api/users/list`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get('/users/list')
     .then((response)=>{
         success(response); 
     })
@@ -301,11 +257,7 @@ export const listUsers = (success) => {
 
 export const userData = (id,success) => {
 
-    axios.get(`${url}/api/users/:${id}`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } 
-    })
+    authorizedRequests.get(`/users/:${id}`)
         .then((response)=>{
             success(response);
         })
@@ -316,10 +268,7 @@ export const userData = (id,success) => {
 
 
 export const createUser = (payload,success) => {
-    axios.post(`${url}/api/users/new`,{
-        headers:{
-            'Authorization': `Bearer ${token}`
-        } ,
+    authorizedRequests.post('/users/new',{
         payload:payload
     })
     .then((response)=>{

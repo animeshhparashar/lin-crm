@@ -1,12 +1,17 @@
 package com.lincrm.server.dto;
 
-public class AccountMin {
+import com.lincrm.server.model.Account;
 
-    public String id;
+public record AccountMin(
+        String id,
+        String name,
+        String domain,
+        String assignedTo
+) {
 
-    public String name;
+    public static AccountMin fromAccount(Account account) {
+        return new AccountMin(account.getId().toString(), account.getName(),account.getDomain(),account.getAssignedTo().getFullName());
+    }
 
-    public String domain;
 
-    public String assignedTo;
 }

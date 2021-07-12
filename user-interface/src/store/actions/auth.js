@@ -1,4 +1,4 @@
-import * as API from '../../API/api';
+import * as API from '../../apis/api';
 
 
 export const login = (username,password) => {

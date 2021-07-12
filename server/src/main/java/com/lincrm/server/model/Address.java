@@ -68,7 +68,7 @@ public class Address implements Serializable {
     }
 
     public static Address fromDTO(AddressDTO dto) {
-        return new Address(dto.lineA, dto.lineB, dto.city, dto.state, dto.country, dto.postalCode);
+        return new Address(dto.lineA(), dto.lineB(), dto.city(), dto.state(), dto.country(), dto.postalCode());
 
     }
 }

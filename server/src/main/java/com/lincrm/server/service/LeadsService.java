@@ -32,10 +32,10 @@ public class LeadsService {
         Date currentDate = new Date();
 
         Lead lead = leadRepository
-                .findLeadByFirstnameAndLastname(payload.firstname, payload.lastname).orElse(null);
+                .findLeadByFirstnameAndLastname(payload.firstname(), payload.lastname()).orElse(null);
 
         if(lead != null) throw new AlreadyExistsException("Lead Already Exists");
-        User assignedTo = userService.fetchUser(payload.assignedTo);
+        User assignedTo = userService.fetchUser(payload.assignedTo());
 
         
     }

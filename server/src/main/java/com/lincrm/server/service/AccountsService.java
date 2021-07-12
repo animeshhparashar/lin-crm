@@ -23,6 +23,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class AccountsService {
@@ -41,21 +42,6 @@ public class AccountsService {
     UserService userService;
     @Autowired
     WorkBookService workBookService;
-
-    public AccountDTO fetchAccountDTO(Account account) {
-        AccountDTO dto = modelMapper.map(account, AccountDTO.class);
-
-        dto.billingAddress = AddressDTO.fromAddress(account.getBillingAddress());
-
-        dto.shippingAddress = AddressDTO.fromAddress(account.getShippingAddress());
-
-        dto.assignedTo = account.getAssignedTo().getFullName();
-        dto.createdBy = account.getCreatedBy().getFullName();
-
-        dto.createdOn = dateFormat.format(account.getCreatedOn());
-
-        return dto;
-    }
 
     public void createAccountsFromXLSX(MultipartFile file, User admin) throws IOException, ParseException {
         List<Map<String, String>> data = workBookService.parseXLSXFile(file);
@@ -101,22 +87,22 @@ public class AccountsService {
     public void createNewAccount(NewAccountPayload payload, User user) {
         Date currentDate = new Date();
 
-        Account account = accountRepository.findAccountByName(payload.name).orElse(null);
+        Account account = accountRepository.findAccountByName(payload.name()).orElse(null);
         if(account != null) throw new AlreadyExistsException("Account Already Exists");
-        User assignedTo = userService.fetchUser(payload.assignedTo);
+        User assignedTo = userService.fetchUser(payload.assignedTo());
 
         account = new Account();
 
-        account.setName(payload.name);
-        account.setDomain(payload.domain);
-        Address billingAddress = Address.fromDTO(payload.billingAddress);
+        account.setName(payload.name());
+        account.setDomain(payload.domain());
+        Address billingAddress = Address.fromDTO(payload.billingAddress());
         account.setBillingAddress(billingAddress);
 
-        if(payload.shippingAddress != null &&
-                payload.shippingAddress.lineA != null &&
-                !payload.shippingAddress.lineA.equals("")) {
+        if(payload.shippingAddress() != null &&
+                payload.shippingAddress().lineA() != null &&
+                !payload.shippingAddress().lineA().equals("")) {
 
-            Address shippingAddress = Address.fromDTO(payload.shippingAddress);
+            Address shippingAddress = Address.fromDTO(payload.shippingAddress());
             account.setShippingAddress(shippingAddress);
         }
         else {
@@ -136,22 +122,12 @@ public class AccountsService {
         Account account = accountRepository.findAccountById(UUID.fromString(id))
                 .orElseThrow(()-> new NotFoundException("Could find Account"));
 
-        return fetchAccountDTO(account);
+        return AccountDTO.fromAccount(account);
     }
 
     public List<AccountMin> listOfAccounts() {
-        List<Account> accounts = accountRepository.findAll();
-        List<AccountMin> result = new ArrayList<>();
+        return accountRepository.findAll().stream()
+                .map(AccountMin::fromAccount).collect(Collectors.toList());
 
-        for (Account account : accounts) {
-            AccountMin dto = new AccountMin();
-            dto.id = account.getId().toString();
-            dto.name = account.getName();
-            dto.domain = account.getDomain();
-            dto.assignedTo = account.getAssignedTo().getFullName();
-
-            result.add(dto);
-        }
-        return result;
     }
 }

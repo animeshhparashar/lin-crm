@@ -26,7 +26,7 @@ class Navigation extends React.Component {
                 <Router>
                     <div className="wrapper">
                         <Sidebar />
-                        <Redirect strict from="/" to="/dashboard/operational" />
+                        <Route exact path="/" render={()=> <Redirect to="/dashboard/operational" />} />
                         <Route path="/dashboard">
                             <Dashboard />
                         </Route>
