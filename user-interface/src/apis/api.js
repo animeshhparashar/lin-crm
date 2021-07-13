@@ -1,7 +1,16 @@
 import * as Auth from '../store/actions/auth';
 import axios from 'axios';
+import { ReactReduxContext } from 'react-redux'
+import {Component, useContext} from 'react';
 
 const apiUrl = "localhost:5000/api";
+// console.log(token);
+
+
+function API(){
+
+const { store } = useContext(ReactReduxContext)
+const token = "asdasdasdasdasdas";
 
 const unauthorizedRequests = axios.create({
     baseURL: apiUrl,
@@ -16,10 +25,7 @@ const authorizedRequests = axios.create({
     }
 });
 
-
-
-
-export const login = (username,password,success) => {
+const login = (username,password,success) => {
 
     unauthorizedRequests().post('/auth/login',{
         username:username,
@@ -33,9 +39,9 @@ export const login = (username,password,success) => {
 }
 
 
-export const resetPassword = (username,password) => {
+const resetPassword = (username,password) => {
 
-    axios.get(url+'/auth/reset-password',{
+    axios.get(apiUrl+'/auth/reset-password',{
         username:username,
         password:password
     })
@@ -49,7 +55,7 @@ export const resetPassword = (username,password) => {
 }
 
 
-export const AccountList = (success) => {
+const AccountList = (success) => {
 
     authorizedRequests.get('/accounts/list')
         .then((response)=>{
@@ -60,7 +66,7 @@ export const AccountList = (success) => {
         })
 }
 
-export const AccountData = (id,success) => {
+const  AccountData = (id,success) => {
 
     authorizedRequests.get(`/accounts/:${id}`)
         .then((response)=>{
@@ -71,7 +77,7 @@ export const AccountData = (id,success) => {
         })
 }
 
-export const createAccount = (payload,success) => {
+const createAccount = (payload,success) => {
     authorizedRequests.post('/accounts/new',{
         payload:payload
     })
@@ -84,7 +90,7 @@ export const createAccount = (payload,success) => {
 }
 
 
-export const clientList = (success) => {
+const clientList = (success) => {
 
     authorizedRequests.get('/clients/list')
         .then((response)=>{
@@ -95,7 +101,7 @@ export const clientList = (success) => {
         })
 }
 
-export const clientData = (id,success) => {
+const  clientData = (id,success) => {
 
     authorizedRequests.get(`/clients/:${id}`)
         .then((response)=>{
@@ -106,7 +112,7 @@ export const clientData = (id,success) => {
         })
 }
 
-export const createClient = (payload,success) => {
+const createClient = (payload,success) => {
     authorizedRequests.post('/clients/new',{
         payload:payload
     })
@@ -119,7 +125,7 @@ export const createClient = (payload,success) => {
 }
 
 
-export const leadsList = (success) => {
+const  leadsList = (success) => {
 
     authorizedRequests.get('/leads/list')
         .then((response)=>{
@@ -130,7 +136,7 @@ export const leadsList = (success) => {
         })
 }
 
-export const leadData = (id,success) => {
+const leadData = (id,success) => {
 
     authorizedRequests.get(`/leads/:${id}`,)
         .then((response)=>{
@@ -142,7 +148,7 @@ export const leadData = (id,success) => {
 }
 
 
-export const createLead = (payload,success) => {
+const createLead = (payload,success) => {
     authorizedRequests.post('/leads/new',{
         payload:payload
     })
@@ -155,7 +161,7 @@ export const createLead = (payload,success) => {
 }
 
 
-export const dealsList = (success) => {
+const dealsList = (success) => {
     authorizedRequests.get('/deals/list',)
         .then((response)=>{
             success(response);
@@ -166,7 +172,7 @@ export const dealsList = (success) => {
 }
 
 
-export const dealData = (id,success) => {
+const dealData = (id,success) => {
 
     authorizedRequests.get(`/leads/:${id}`,)
         .then((response)=>{
@@ -179,7 +185,7 @@ export const dealData = (id,success) => {
 
 
 
-export const createDeal = (payload,success) => {
+const createDeal = (payload,success) => {
     authorizedRequests.post('/leads/new',{
         payload:payload
     })
@@ -191,7 +197,7 @@ export const createDeal = (payload,success) => {
     })
 }
 
-export const updateDeal = (payload,success) => {
+const  updateDeal = (payload,success) => {
     authorizedRequests.post('/leads/update',{
 
         payload:payload
@@ -205,7 +211,7 @@ export const updateDeal = (payload,success) => {
 }
 
 
-export const listTasks = (success) => {
+const  listTasks = (success) => {
         
     authorizedRequests.get('/tasks/list')
     .then((response)=>{
@@ -218,7 +224,7 @@ export const listTasks = (success) => {
 }
 
 
-export const createTasks = (payload,success) => {
+const  createTasks = (payload,success) => {
     authorizedRequests.post('/tasks/new',{
         payload:payload
     })
@@ -230,7 +236,7 @@ export const createTasks = (payload,success) => {
     })
 }
 
-export const updateTaskStatus = (id,status,success) => {
+const  updateTaskStatus = (id,status,success) => {
     authorizedRequests.post('/leads/update',{
         id:id,
         status:status
@@ -244,7 +250,7 @@ export const updateTaskStatus = (id,status,success) => {
 }
 
 
-export const listUsers = (success) => {
+const listUsers = (success) => {
     authorizedRequests.get('/users/list')
     .then((response)=>{
         success(response); 
@@ -255,7 +261,7 @@ export const listUsers = (success) => {
 }
 
 
-export const userData = (id,success) => {
+const userData = (id,success) => {
 
     authorizedRequests.get(`/users/:${id}`)
         .then((response)=>{
@@ -267,7 +273,7 @@ export const userData = (id,success) => {
 }
 
 
-export const createUser = (payload,success) => {
+const createUser = (payload,success) => {
     authorizedRequests.post('/users/new',{
         payload:payload
     })
@@ -278,3 +284,6 @@ export const createUser = (payload,success) => {
         console.log("Error", error);
     })
 }
+}
+
+export default API;
