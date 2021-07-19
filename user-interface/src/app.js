@@ -13,6 +13,10 @@ import Clients from "./pages/clients";
 import Leads from "./pages/leads";
 import Accounts from "./pages/accounts";
 import Profile from "./pages/profile";
+import AccountForm from './pages/accountform';
+import OppertunityForm from './pages/oppertunityform';
+import ContactForm from './pages/contactform';
+
 
 
 class Navigation extends React.Component {
@@ -36,6 +40,9 @@ class Navigation extends React.Component {
                         <Route exact path="/leads" component={Leads} />
                         <Route exact path="/clients" component={Clients} />
                         <Route exact path="/accounts" component={Accounts} />
+                        <Route exact path="/accountform" component={AccountForm} />
+                        <Route exact path="/oppertunityform" component={OppertunityForm} />
+                        <Route exact path="/contactform" component={ContactForm} />
                         <Route path="/profile">
                             <Profile />
                         </Route>
