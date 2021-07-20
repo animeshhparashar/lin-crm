@@ -1,5 +1,6 @@
 package com.lincrm.server.service;
 
+import com.lincrm.server.dto.LeadsMin;
 import com.lincrm.server.dto.NewLeadPayload;
 import com.lincrm.server.exception.AlreadyExistsException;
 import com.lincrm.server.exception.NotFoundException;
@@ -25,6 +26,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class LeadsService {
@@ -123,6 +125,11 @@ public class LeadsService {
     public Lead fetchLeadInfoByName(String firstname, String lastname) {
         return leadRepository.findLeadByFirstnameAndLastname(firstname, lastname)
                 .orElseThrow(()-> new NotFoundException("Lead not found"));
+    }
+
+    public List<LeadsMin> getAllLeads() {
+        return leadRepository.findAll().stream()
+                .map(LeadsMin::fromLead).collect(Collectors.toList());
     }
 
 }

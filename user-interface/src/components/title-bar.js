@@ -199,11 +199,7 @@ class ActionDropdown extends React.Component{
                     unmountOnExit>
                     <div className="menu notifications" style={{ height: this.state.menuHeight }}>
                         <hr className="menu-divider" />
-                        <NotificationItem>First Notification</NotificationItem>
-                        <NotificationItem>Second Notification</NotificationItem>
-                        <NotificationItem>Third Notification</NotificationItem>
-                        <NotificationItem>Fourth Notification</NotificationItem>
-                        <NotificationItem>Fifth Notification</NotificationItem>
+                        <div className="notification-empty">No New Notifications</div>
                     </div>
                 </CSSTransition>
 

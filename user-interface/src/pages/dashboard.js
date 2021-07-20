@@ -13,6 +13,7 @@ import {
     RiContactsBook2Line,
     RiFileListLine
 } from "react-icons/all";
+import {Bar} from "react-chartjs-2";
 
 class Dashboard extends React.Component {
 
@@ -117,6 +118,34 @@ class Analytical extends React.Component {
 }
 
 const DashboardOverview = (props) => {
+    const labels = ["JAN", "FEB", "MAR", "APR", "MAY"];
+
+    const data = {
+        labels: labels,
+        datesets: [
+            {
+                data: labels.map(() => {
+                    return [Math.floor(Math.random() * (85 - 50) ) + 25, Math.floor(Math.random() * (50 - 25) ) + 25,]
+                })
+            }
+        ]
+    }
+    const options={
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Monthly Stats'
+                }
+            }
+        }
+    }
     return(
         <div className="dashboard-overview">
             <div className="operational-details">
@@ -125,7 +154,7 @@ const DashboardOverview = (props) => {
                 </div>
             </div>
             <div className="analytical-details">
-
+                <Bar data={data} options={options} />
             </div>
 
         </div>

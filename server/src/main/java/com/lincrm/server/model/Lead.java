@@ -79,6 +79,10 @@ public class Lead implements Serializable {
 
     private Date lastModifiedOn;
 
+    public String getFullname() {
+        return this.firstname + " " +this.lastname;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

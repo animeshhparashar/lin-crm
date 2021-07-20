@@ -1,5 +1,6 @@
 package com.lincrm.server.controllers;
 
+import com.lincrm.server.dto.LeadsMin;
 import com.lincrm.server.model.User;
 import com.lincrm.server.repository.UserRepository;
 import com.lincrm.server.service.AccountsService;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 
 
 @RestController
@@ -50,5 +52,10 @@ public class BaseAPI {
         }
 
         return "Records Successfully Completed";
+    }
+
+    @GetMapping("/api/leads/list")
+    public List<LeadsMin> getLeadsList() {
+        return leadsService.getAllLeads();
     }
 }
