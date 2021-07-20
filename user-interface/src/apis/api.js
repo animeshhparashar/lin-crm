@@ -1,5 +1,5 @@
 import * as Auth from '../store/actions/auth';
-import axios from 'axios';
+const axios = require('axios');
 
 const apiUrl = "localhost:5000/api";
 
@@ -8,15 +8,14 @@ const unauthorizedRequests = axios.create({
     'Content-Type': 'application/json'
 });
 
+// 'Authorization': `Bearer ${token}`
+
 const authorizedRequests = axios.create({
     baseURL: apiUrl,
     headers: {
-        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
     }
 });
-
-
 
 
 export const login = (username,password,success) => {
@@ -35,13 +34,13 @@ export const login = (username,password,success) => {
 
 export const resetPassword = (username,password) => {
 
-    axios.get(url+'/auth/reset-password',{
+    unauthorizedRequests.get('/auth/reset-password',{
         username:username,
         password:password
     })
         .then((response)=>{
             console.log("This is response :::", response);
-            Auth.login(username,response.Token);
+            Auth.login(username,response.token);
         })
         .catch((error)=>{
             console.log("Error", error);

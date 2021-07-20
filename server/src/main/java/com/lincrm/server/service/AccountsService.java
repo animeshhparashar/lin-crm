@@ -1,9 +1,8 @@
 package com.lincrm.server.service;
 
-
 import com.lincrm.server.dto.AccountDTO;
 import com.lincrm.server.dto.AccountMin;
-import com.lincrm.server.dto.AddressDTO;
+
 import com.lincrm.server.dto.NewAccountPayload;
 import com.lincrm.server.exception.AlreadyExistsException;
 import com.lincrm.server.exception.NotFoundException;
@@ -46,7 +45,7 @@ public class AccountsService {
     public void createAccountsFromXLSX(MultipartFile file, User admin) throws IOException, ParseException {
         List<Map<String, String>> data = workBookService.parseXLSXFile(file);
         Date currentDate = new Date();
-        DateFormat df = new SimpleDateFormat("");
+
         System.out.println("Creating Account Records...");
         System.out.println("Found " + data.size() + " records in XLSX File");
 
@@ -77,7 +76,7 @@ public class AccountsService {
 
             accountRepository.save(account);
 
-            System.out.print("\r" + counter + "/" + data.size() + " records created...");
+            System.out.print("\r\r" + counter + "/" + data.size() + " records created...");
             counter++;
         }
         System.out.println("\nRecords Creation Complete...");
@@ -123,6 +122,11 @@ public class AccountsService {
                 .orElseThrow(()-> new NotFoundException("Could find Account"));
 
         return AccountDTO.fromAccount(account);
+    }
+
+    public Account fetchAccount(String name) {
+        return accountRepository.findAccountByName(name)
+                .orElseThrow(() -> new NotFoundException("Could not find Account"));
     }
 
     public List<AccountMin> listOfAccounts() {

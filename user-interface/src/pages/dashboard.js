@@ -5,7 +5,14 @@ import "../assets/scss/pages/dashboard.scss";
 import {TitleBar, TitleBarActions, TitleBarCondensed} from "../components/title-bar";
 import SearchBar from "../components/searchbar";
 import {Route, Switch} from "react-router-dom";
-import {AiFillAppstore, IoIosListBox} from "react-icons/all";
+import {
+    AiFillAppstore,
+    IoIosListBox,
+    MdDonutLarge,
+    MdTimeline,
+    RiContactsBook2Line,
+    RiFileListLine
+} from "react-icons/all";
 
 class Dashboard extends React.Component {
 
@@ -34,22 +41,37 @@ class Operational extends React.Component {
                     </TitleBarCondensed>
                     <div className="action-cards">
                         <div className="card">
-                            <div className="card-icon"></div>
-                            <div className="card-text"></div>
+                            <div className="card-title"><span className="card-heading">Tasks</span></div>
+                            <div className="card-body">
+                                <span className="card-subtitle">9</span>
+                                <div className="card-icon"><RiFileListLine className="item-icon"/></div>
+                            </div>
                         </div>
 
                         <div className="card">
-                            <div className="card-icon"></div>
-                            <div className="card-text"></div>
+                            <div className="card-title"><span className="card-heading">Deals</span></div>
+                            <div className="card-body">
+                                <span className="card-subtitle">12</span>
+                                <div className="card-icon"><MdDonutLarge className="item-icon"/></div>
+                            </div>
+
                         </div>
 
                         <div className="card">
-                            <div className="card-icon"></div>
-                            <div className="card-text"></div>
+                            <card class="card-title"><span className="card-heading">Leads</span></card>
+                            <div className="card-body">
+
+                                <span className="card-subtitle">21</span>
+                                <div className="card-icon"><MdTimeline className="item-icon" /></div>
+                            </div>
+
                         </div>
                         <div className="card">
-                            <div className="card-icon"></div>
-                            <div className="card-text"></div>
+                            <card class="card-title"><span className="card-heading">Accounts</span></card>
+                            <div className="card-body">
+                                <span className="card-subtitle">92</span>
+                                <div className="card-icon"><RiContactsBook2Line className="item-icon"/></div>
+                            </div>
                         </div>
                     </div>
 

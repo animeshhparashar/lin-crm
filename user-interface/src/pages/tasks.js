@@ -29,7 +29,7 @@ class Tasks extends React.Component {
     render() {
 
         return (
-            <div className="view-wrapper tasks">
+            <div className="view-wrapper tasks-page">
                 <div className="tasks-wrapper">
                     <div className="tasks-pane">
                         <TitleBarCondensed title="Tasks">

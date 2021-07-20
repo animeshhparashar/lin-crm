@@ -1,7 +1,9 @@
 package com.lincrm.server.service;
 
 import com.lincrm.server.exception.NotFoundException;
+import com.lincrm.server.model.Role;
 import com.lincrm.server.model.User;
+import com.lincrm.server.repository.RoleRepository;
 import com.lincrm.server.repository.UserRepository;
 import com.lincrm.server.util.WorkBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +15,16 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class UserService {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    RoleRepository roleRepository;
     @Autowired
     WorkBookService workBookService;
 
@@ -39,14 +42,17 @@ public class UserService {
     public void createUsersFromXLSX(MultipartFile file, User admin) throws IOException, ParseException {
         List<Map<String, String>> data = workBookService.parseXLSXFile(file);
         Date currentDate = new Date();
-        DateFormat df = new SimpleDateFormat("");
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         System.out.println("Creating User Records...");
         System.out.println("Found " + data.size() + " records in XLSX File");
+        Role managerRole = roleRepository.findRoleByName("Manager");
+        Role employeeRole = roleRepository.findRoleByName("Employee");
 
+        List<User> supervisors = new ArrayList<>();
         int counter = 1;
+        int superVisorCount = 0;
         for (Map<String, String> record : data) {
             User user = new User();
-
             user.setEmail(record.get("email"));
             user.setPassword(passwordEncoder.encode("testpass"));
             user.setPhoneNumber(((Long) Long.parseLong(record.get("phone"))).toString());
@@ -63,9 +69,21 @@ public class UserService {
             user.setCreatedBy(admin);
             user.setCreatedOn(currentDate);
 
-            userRepository.save(user);
+            if(superVisorCount < 5) {
+                user.setRoles(Collections.singletonList(managerRole));
+                user.setSupervisor(admin);
+                superVisorCount++;
+                user = userRepository.save(user);
+                supervisors.add(user);
+            }
+            else {
+                int randomNum = ThreadLocalRandom.current().nextInt(0, 5);
+                user.setRoles(Collections.singletonList(employeeRole));
+                user.setSupervisor(supervisors.get(randomNum));
+                userRepository.save(user);
+            }
 
-            System.out.print("\r" + counter + "/" + data.size() + " records created...");
+            System.out.print("\r\r" + counter + "/" + data.size() + " records created...");
             counter++;
         }
         System.out.println("\nRecords Creation Complete...");
